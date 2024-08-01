@@ -1,0 +1,154 @@
+    section {
+        display: flex;
+    }
+    
+    .header-container {
+        padding-top: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .text-container {
+        width: 100%;
+    }
+    
+    img {
+        width: 350px;
+    }
+    
+    // :root {
+    //     --secondary-color: #00cccc;
+    //     --main-background: #00ffff;
+    // }
+    .button-section {
+        display: inline-flex;
+        align-items: center;
+        background-color: var(--main-background);
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        outline: none;
+        position: relative;
+        overflow: hidden;
+        transition: background-color 0.5s ease;
+    }
+    
+    .button-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--secondary-color-hover);
+        z-index: 0;
+        transform: translateX(-100%);
+        transition: transform 1s ease;
+    }
+    
+    .button-section:hover {
+        background-color: var(--main-background-hover);
+    }
+    
+    .button-section:hover::before {
+        transform: translateX(0%);
+    }
+    
+    .button-section span {
+        position: relative;
+        z-index: 1;
+        color: white;
+    }
+    
+    .button-section svg {
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        position: relative;
+        z-index: 1;
+    }
+    
+    .button-section svg .inner {
+        fill: var(--main-background);
+        /* Stellt sicher, dass die Hintergrundfarbe des Containers angezeigt wird */
+    }
+    
+    .button-section:hover svg .inner {
+        fill: var(--main-background-hover);
+        /* Ändert die Farbe des inneren Polygons beim Hover */
+    }
+    
+    .animated-text {
+        display: flex;
+        font-size: 2em;
+        overflow: hidden;
+    }
+    
+    .animated-text span {
+        display: inline-block;
+        opacity: 0;
+    }
+    
+    @keyframes slot-machine {
+        0%,
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    #animation-container {
+        position: relative;
+        width: 300px;
+        /* Beispiel-Breite */
+        height: 200px;
+        /* Beispiel-Höhe */
+        overflow: hidden;
+    }
+    
+    #animation {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: turquoise;
+        animation: slideIn 2s forwards, hideImage 2s forwards;
+    }
+    
+    #bild {
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+    }
+    
+    @keyframes slideIn {
+        0% {
+            left: -100%;
+        }
+        100% {
+            left: 100%;
+        }
+    }
+    
+    @keyframes hideImage {
+        0% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    // .button-section {
+    //     display: flex;
+    //     height: 24px;
+    //     align-items: center;
+    //     svg {
+    //         width: 16px;
+    //     }
+    // }

@@ -1,0 +1,192 @@
+section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+    font-size: 50px;
+    .header-container {
+        display: flex;
+        align-items: center;
+        width: 80%;
+    }
+}
+
+.animated-header {
+    display: flex;
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color-secondary);
+    font-size: 32px;
+}
+
+.char {
+    display: inline-block;
+    opacity: 0;
+    animation: reveal 1s ease-in-out forwards;
+}
+
+@keyframes reveal {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+//
+//second animation
+.header-container {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.header-text-container {
+    // width: 100%;
+    position: relative;
+}
+
+.header-text {
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    animation: revealText 0.5s forwards 1.3s;
+}
+
+.background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    z-index: 5;
+    animation: slideInBackground 2.0s forwards, slideOutBackground 2.0s forwards 1.3s;
+}
+
+.sub-header-text {
+    margin-top: 20px;
+}
+
+@keyframes slideOutBackground {
+    0% {
+        width: 100%;
+        left: 0;
+    }
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}
+
+@keyframes slideInBackground {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes revealText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+// Line
+.line {
+    margin-top: 10px;
+    opacity: 0;
+    animation: drawLine 1.3s forwards 1.3s;
+    height: 1px;
+    width: 80%;
+    margin-left: 16px;
+    background-color: var(--text-color-secondary);
+}
+
+@keyframes hideLine {
+    0% {
+        opacity: 0;
+        width: 100%;
+    }
+    100% {
+        opacity: 1;
+        width: 0;
+    }
+}
+
+@keyframes drawLine {
+    0% {
+        opacity: 0;
+        width: 0;
+        left: 0;
+    }
+    100% {
+        opacity: 1;
+        width: 100%;
+        left: 0;
+    }
+}
+
+//scroll indicator
+.scroll-indicator {
+    border: 1px solid color-mix(in lab, white 40%, transparent);
+    border-radius: 20px;
+    width: 18px;
+    height: 24px;
+    position: fixed;
+    bottom: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.scroll-indicator::before {
+    content: '';
+    display: block;
+    width: 2px;
+    height: 6px;
+    background-color: color-mix(in lab, white 40%, transparent);
+    border-radius: 2px;
+    animation: scroll 2s infinite;
+}
+
+.scroll-indicator.hidden {
+    opacity: 0;
+}
+
+@keyframes scroll {
+    0%,
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+@keyframes scroll {
+    0%,
+    20% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}

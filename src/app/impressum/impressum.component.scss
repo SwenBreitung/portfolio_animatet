@@ -1,0 +1,19 @@
+@import './../../styles.scss';
+section {
+    display: flex;
+    justify-content: center;
+}
+
+.impressum-container {
+    padding-top: 56px;
+    padding-left: 48px;
+    padding-right: 48px;
+    height: 76vh;
+    max-width: 1150px;
+    width: 100%;
+}
+
+a {
+    color: var(--second-main-color);
+    text-decoration: none;
+}

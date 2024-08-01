@@ -1,1 +1,449 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    //
+    /* Hauptfarben */
+    --white-main-color: #8E44AD;
+    --white-main-background: #ffffff;
+    --white-main-hover-color: #732D91;
+    --white-main-focus-color: #732D91;
+    //
+    /* Sekundärfarben */
+    --white-secondary-color: #E67E22;
+    --white-secondary-background: #FEF5E7;
+    --white-secondary-hover-color: #D35400;
+    --white-secondary-focus-color: #D35400;
+    //
+    /* Textfarben */
+    --white-text-color: #333333;
+    --white-text-color-secondary: #555555;
+    //
+    /* Randfarben */
+    --white-main-border-color: #E0E0E0;
+    --white-secondary-border-color: #E67E22;
+    //
+    /* Schatten */
+    --white-box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    //
+    //
+    //darkmode
+    //
+    //darkmode Main
+    --main-color: rgb(207, 207, 207);
+    --main-background: rgb(18, 18, 18);
+    --main-hover-color: rgb(28, 99, 186);
+    --main-focus-color: rgb(38, 38, 38);
+    //Darkmode Second
+    --secondary-color: rgb(2, 195, 209);
+    --secondary-color-hover: rgba(2, 195, 209, 0.4);
+    --secondary-background: rgb(18, 18, 18);
+    --secondary-hover-color: rgb(244, 210, 210);
+    --secondary-focus-color: #E67E22;
+    //Darkmode Color
+    --text-color: rgb(207, 207, 207);
+    --text-color-secondary: #a09c9c;
+    /*Darkmode Randfarben */
+    --main-border-color: #5E5A5A;
+    --secondary-border-color: #F39C12;
+    //
+    /* Darkmode Schatten */
+    --box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    //
+    //img backgroundcolor
+    --img-logo: rgb(232, 0, 4);
+    //Darkmode Zustandsfarben für Feedback 
+    --success-color: #27AE60;
+    --info-color: #2980B9;
+    --warning-color: #F39C12;
+    --danger-color: #C0392B;
+    //
+    /* Zustandsfarben für Feedback */
+    // --success-color: #2ECC71;
+    // --info-color: #3498DB;
+    // --warning-color: #F1C40F;
+    // --danger-color: #E74C3C;
+    --font-primary: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    --font-secondary: Georgia, 'Times New Roman', Times, serif;
+    --font-size-base: 16px;
+    --font-size-lg: 20px;
+    --font-size-sm: 14px;
+    --line-height-base: 1.5;
+    //
+    /* Z-Index Management */
+    --zindex-dropdown: 1000;
+    --zindex-sticky: 1020;
+    --zindex-fixed: 1030;
+    --zindex-modal-backdrop: 1040;
+    --zindex-modal: 1050;
+    --zindex-popover: 1060;
+    --zindex-tooltip: 1070;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+* {
+    z-index: 1;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
+    color: var(--text-color);
+    background-color: var(--main-background);
+    width: 100vw;
+    height: 100vh;
+}
+
+app-content,
+app-hero-section,
+app-main,
+.d-grow {
+    flex-grow: 1;
+    min-height: 1px;
+    min-width: 1px
+}
+
+app-content,
+app-main {
+    display: flex;
+}
+
+@mixin d-grow() {
+    display: flex;
+    flex-grow: 1;
+    min-height: 1px;
+    min-width: 1px
+}
+
+.body * {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 1px;
+    min-width: 1px
+}
+
+
+/* Typografie */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: var(--font-secondary);
+}
+
+h2 {
+    font-size: 44px;
+}
+
+
+/* Weiter für h4, h5, h6 nach Bedarf */
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--main-hover-color);
+}
+
+
+/* Formulare */
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--secondary-background);
+    background-clip: padding-box;
+    border: 1px solid var(--border-color);
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--main-focus-color);
+    // box-shadow: 0 0 0 0.2rem rgba(142, 68, 173, 0.25);
+}
+
+.visible {
+    display: block !important;
+}
+
+.d-none {
+    display: none;
+}
+
+
+/* Margin und Padding in 8px Schritten */
+
+.m-8 {
+    margin: 8px;
+}
+
+.mt-8 {
+    margin-top: 8px;
+}
+
+.mb-8 {
+    margin-bottom: 8px;
+}
+
+.ml-8 {
+    margin-left: 8px;
+}
+
+.mr-8 {
+    margin-right: 8px;
+}
+
+.m-16 {
+    margin: 16px;
+}
+
+.mt-16 {
+    margin-top: 16px;
+}
+
+.mb-16 {
+    margin-bottom: 16px;
+}
+
+.ml-16 {
+    margin-left: 16px;
+}
+
+.mr-16 {
+    margin-right: 16px;
+}
+
+.m-24 {
+    margin: 24px;
+}
+
+.mt-24 {
+    margin-top: 24px;
+}
+
+.mb-24 {
+    margin-bottom: 24px;
+}
+
+.ml-24 {
+    margin-left: 24px;
+}
+
+.mr-24 {
+    margin-right: 24px;
+}
+
+.p-8 {
+    padding: 8px;
+}
+
+.pt-8 {
+    padding-top: 8px;
+}
+
+.pb-8 {
+    padding-bottom: 8px;
+}
+
+.pl-8 {
+    padding-left: 8px;
+}
+
+.pr-8 {
+    padding-right: 8px;
+}
+
+.p-16 {
+    padding: 16px;
+}
+
+.pt-16 {
+    padding-top: 16px;
+}
+
+.pb-16 {
+    padding-bottom: 16px;
+}
+
+.pl-16 {
+    padding-left: 16px;
+}
+
+.pr-16 {
+    padding-right: 16px;
+}
+
+.p-24 {
+    padding: 24px;
+}
+
+.pt-24 {
+    padding-top: 24px;
+}
+
+.pb-24 {
+    padding-bottom: 24px;
+}
+
+.pl-24 {
+    padding-left: 24px;
+}
+
+.pr-24 {
+    padding-right: 24px;
+}
+
+.gap8 {
+    gap: 8px
+}
+
+.gap16 {
+    gap: 16px
+}
+
+.gap24 {
+    gap: 24px
+}
+
+
+/* Scrollbar-Styling für Webkit-Browser (Chrome, Safari) */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+
+/* Scrollbar-Styling für Firefox */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f1f1f1;
+}
+
+
+/* Einige wichtige CSS-Include-Funktionen */
+
+@mixin center-flex($justify-content: center, $align-items: center) {
+    display: flex;
+    justify-content: $justify-content;
+    align-items: $align-items;
+}
+
+@mixin column($column:column) {
+    display: flex;
+    flex-direction: $column;
+}
+
+
+/* Flexbox-Utility-Klassen */
+
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.justify-content-center {
+    display: flex;
+    justify-content: center;
+}
+
+.align-items-center {
+    display: flex;
+    align-items: center;
+}
+
+.curser-pointer {
+    cursor: pointer;
+}
+
+
+/* Responsiveness und Media Queries */
+
+@media (max-width: 768px) {
+    .m-8,
+    .m-16,
+    .m-24 {
+        margin: 4px;
+    }
+    .p-8,
+    .p-16,
+    .p-24 {
+        padding: 4px;
+    }
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+    background-color: var(--main-background);
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

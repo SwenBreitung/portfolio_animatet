@@ -1,0 +1,161 @@
+<section id="contact-me" class="contact">
+
+    <div class="header z-index10">
+        <div class="horizontal-line"></div>
+        @if (translateService.de) {
+        <h3 class="section-heading">Kontakt</h3>
+        }@if (translateService.en) {
+        <h1 class="section-heading">Contact</h1>
+        }
+    </div>
+
+    <div class="d-flex all-text-area z-index10">
+        <div class="text-padding-left ">
+            @if (translateService.de) {
+            <h3>Haben Sie ein Problem zu lösen?</h3>
+            }@if (translateService.en) {
+            <h3>Got a problem to solve?</h3>
+            } @if (translateService.de) {
+            <p>
+                Kontaktieren Sie mich über dieses Formular. Ich bin daran interessiert, von Ihnen zu hören, Ihre Ideen kennenzulernen und mit meiner Arbeit zu Ihren Projekten beizutragen.
+            </p>} @if (translateService.en) {
+            <p>
+                Contact me through this form, I am interested in hearing you, knowing your ideas and contributing to your projects with my work.
+            </p>
+            }
+            <div class="text-contact-me">
+                @if (translateService.de) {
+                <span>
+                    Brauchen Sie einen Frontend-Entwickler?
+                </span> } @if (translateService.en) {
+                <span>
+                Need a Frontend developer? 
+                </span> }@if (translateService.de) {
+                <p class="contact-me">
+                    Kontaktieren Sie mich!
+                </p> } @if (translateService.en) {
+                <p class="contact-me">
+                    Contact me!
+                </p> }
+            </div>
+        </div>
+
+
+        <div class="right-side  z-index10" data-aos="fade-left">
+            <form #contactForm="ngForm" class="form-container" (ngSubmit)="onSubmit(contactForm)">
+
+                <div class="width100p p8 ">
+                    <label for="">Name</label>
+
+                    <input type="text" minlength="3" name="name" [(ngModel)]="contactData.name" required #nameField="ngModel">
+                    <div class="h28px">
+                        @if (translateService.de) {
+                        <div class="error" *ngIf="(nameField.invalid && nameField.touched) || (contactForm.submitted && nameField.invalid)">
+                            Gebe bitte einen Namen mit midestens 3 Zeichen ein.
+                        </div> } @if (translateService.en) {
+                        <div class="error" *ngIf="(nameField.invalid && nameField.touched) || (contactForm.submitted && nameField.invalid)">
+                            Please enter a name with at least 3 characters.
+                        </div> }
+                    </div>
+                </div>
+                <div class="width100p p8 ">
+                    <label for="">E-Mail</label>
+                    <input type="email" name="email" [(ngModel)]="contactData.email" required pattern="^(?![.%+])[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailField="ngModel">
+                    <div class="h28px">
+                        @if (translateService.de) {
+                        <div class="error" *ngIf="emailField.invalid  && emailField.touched || contactForm.submitted  && messageField.invalid">
+                            Gültige E-Mail ist erforderlich.
+                        </div>}@if (translateService.en) {
+                        <div class="error" *ngIf="emailField.invalid  && emailField.touched || contactForm.submitted  && messageField.invalid">
+                            A valid email is required.
+                        </div>}
+                    </div>
+                    <!-- <span class="error" *ngIf="formData.get('email')?.errors?.['pattern']">
+                        testing
+                    </span> -->
+                </div>
+
+                <div class="width100p p8 ">
+                    @if (translateService.de) {
+                    <label for="">Nachrichten Formular</label> }@if (translateService.en) {
+                    <label for="">Message</label> }
+                    <textarea name="message" minlength="20" [(ngModel)]="contactData.message" required #messageField="ngModel"></textarea>
+
+                    <div class="h28px">
+                        @if (translateService.de) {
+                        <div class="error" *ngIf="messageField.invalid  && messageField.touched">
+                            Gebe bitte Midestens 20 Zeichen ein.
+                        </div>}@if (translateService.en) {
+                        <div class="error" *ngIf="messageField.invalid  && messageField.touched">
+                            Please enter at least 20 characters.
+                        </div>}
+
+
+                    </div>
+                </div>
+
+                <div class="data-agreement-section">
+                    <label class="custom-checkbox">
+                        <input name="checkbox" type="checkbox" [(ngModel)]="isAgreed">
+                        <div class="checkmark"></div>
+                    </label> @if (translateService.de) {
+                    <div class="d-flex checkbox-text">
+                        <span> Ich habe die </span>
+                        <br>
+                        <div class="police-container cursor-pointer" (click)="navigateToPolicy()">
+                            &nbsp;Datenschutzrichtlinie&nbsp; </div><br>
+                        <span> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.</span>
+                    </div>
+                    } @if (translateService.en) {
+                    <div class="d-flex checkbox-text">
+                        <span> I've read the </span>
+                        <br>
+                        <div class="police-container" (click)="navigateToPolicy()">
+                            &nbsp;Policy&nbsp; </div><br>
+                        <span> and agree to the processing of my data as outlined.</span>
+                    </div>
+                    }
+                </div>
+                @if (translateService.de) {
+                <button type="submit" [disabled]="!contactForm.valid || !isAgreed">
+                    Nachricht senden
+                </button> } @if (translateService.en) {
+                <button type="submit" [disabled]="!contactForm.valid || !isAgreed">
+                    Send message
+                </button>}
+            </form>
+        </div>
+    </div>
+
+    <div class="background-img"><img src="./assets/brackground-img/green_shadow3.svg" alt=""></div>
+    <div *ngIf="isLoading" class="loading-container">
+        @if (translateService.de) {
+
+        <div class="loading-bar">
+            Lädt...
+        </div>
+        } @if (translateService.en) {
+        <div class="loading-bar">
+            Loading...
+        </div>}
+
+    </div>
+    <div (click)="torgleIsSending()" *ngIf="isSending" class="loading-container">
+        <div class="sending-button">
+            @if(isError){ @if (translateService.de) {
+            <h1>Die Nachricht konnte nicht gesendet werden.</h1> } @if (translateService.en) {
+            <h1>The message could not be sent.</h1> } } @if(!isError){ @if (translateService.de) {
+            <h1>Die Nachricht wurde gesendet.</h1>
+            } @if (translateService.en) {
+
+            <h1>The message has been sent.</h1>> } }
+
+            <!-- <app-button text="Close"></app-button> -->
+        </div>
+    </div>
+
+    <div class="arrow-container">
+        <div></div>
+        <div (click)="layoutService.scrollToSection('hero')" class="arrow-img"></div>
+    </div>
+</section>

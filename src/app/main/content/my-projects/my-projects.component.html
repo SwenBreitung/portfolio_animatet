@@ -1,0 +1,152 @@
+<section class="z-index10" id="portfolio">
+    <div class="header-all-text">
+        <div style=""></div>
+        <div class="header">
+            <h2 class="section-heading">Portfolio</h2>
+            <div class="horizontal-line long-line"></div>
+        </div>
+        <div>@if (translateService.de) {
+            <span class="info-text">
+                Diese Seite ist ein Beispiel meiner Arbeit - probieren Sie sie gerne aus
+            </span>}@if (translateService.en) {
+            <span class="info-text">
+                This page is a sample of my work - please feel free to try them out.
+            </span>}
+        </div>
+    </div>
+</section>
+
+<section class="skill-overlay">
+    <div class="skill-container-img-right z-index10">
+        <div>
+            <div class="skill-container-img-right z-index10">
+                <div class="container-left-text">
+                    <div class="container-left-text">
+                        <h3>DABubble</h3>
+                        <h4>Angular | Firebase | Material Design</h4>
+                        @if (translateService.de) {
+                        <span class="text-left">
+                            I've developed a Slack clone using Angular, Firebase, and Material
+                            Design. This app enables real-time chats, private messaging, and
+                            channel creation—ideal for teams in need of fast and streamlined
+                            communication.
+                        </span> } @if (translateService.en) {
+                        <span class="text-left">
+                            I've developed a Slack clone using Angular, Firebase, and Material
+                            Design. This app enables real-time chats, private messaging, and
+                            channel creation—ideal for teams in need of fast and streamlined
+                            communication.
+                        </span> }
+                    </div>
+                    <div class="d-flex gap" style="padding: 10px">
+                        <a href="https://swen-breitung.de/" target="_blank" rel="noopener noreferrer">
+                            <!-- <app-button-left></app-button-left> -->
+                        </a>
+                        <a href="https://github.com/SwenBreitung/daBubble" target="_blank" rel="noopener noreferrer">
+                            <!-- <app-button-right></app-button-right> -->
+                        </a>
+                    </div>
+                </div>
+                <div class="container-right-img" data-aos="fade-down-left">
+
+                    <app-three-js-animation [texturePath]="'./../../../assets/projects-img/da_bubble.png'"></app-three-js-animation>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="skill-container-img-left z-index10">
+            <div class="all-left">
+                <div class="img all-text-left" data-aos="zoom-out-right">
+                    <app-three-js-animation [texturePath]="'./../../../assets/projects-img/ell_polloco.png'"></app-three-js-animation>
+                </div>
+            </div>
+            <div class="container-right-text z-index10">
+                <div class="all-text-right">
+                    <h3>EllPolloloco</h3>
+                    <h4>JavaScript | HTML | CSS</h4>
+                    @if (translateService.de) {
+                    <span class="info-text-right">
+                        „Ell Polloco“ ist ein kompaktes Jump-and-Run-Spiel im Cartoon-Stil. Das Ziel ist es, Feinde mit gezielten Sprüngen zu besiegen und den Endboss mit geschickt platzierten Salsa-Flaschen auszutricksen. Besondere Aufmerksamkeit erfordern die kleinen Küken, die vom Boss herbeigerufen werden und den Spieler angreifen.
+                    </span> }@if (translateService.en) {
+                    <span class="info-text-right">
+                        Ell Polloco' is a compact jump-and-run game in a cartoon style.
+                        Here, the objective is to defeat enemies with targeted jumps and
+                        outsmart the final boss using cleverly deployed salsa bottles.
+                        Special attention is required for the small chicks summoned by the
+                        boss, which attack the player.
+                    </span> }
+                </div>
+                <div class="d-flex gap" style="padding: 10px">
+                    <a href="https://ell-polloco.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
+                        <!-- <app-button-left></app-button-left> -->
+                    </a>
+                    <a href="https://github.com/SwenBreitung/EllPolloloco" target="_blank" rel="noopener noreferrer">
+                        <!-- <app-button-right></app-button-right> -->
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p16"></div>
+    <div class="skill-container-img-right z-index10">
+        <div>
+            <div class="skill-container-img-right z-index10">
+
+                <div class="container-left-text">
+                    <h3>Join</h3>
+                    <h4>JavaScript | HTML | CSS</h4>
+                    @if (translateService.de) {
+                    <span class="text-left">
+                            Mein Kanban-Board kombiniert Kontaktmanagement und Aufgabenplanung in einem nahtlosen, benutzerfreundlichen Tool. Es ermöglicht die effiziente Speicherung von Kontakten, die einfache Erstellung von Aufgaben und deren strukturierte Organisation. Mit unserer intuitiven Drag-and-Drop-Oberfläche können Sie Ihre Projekte immer im Blick behalten und Ihre Produktivität steigern.
+                        </span>}@if (translateService.en) { <span class="text-left">
+                            My Kanban board combines contact management and task planning in a seamless, user-friendly tool. It allows for efficient storage of contacts, easy creation of tasks, and
+                            their structured organization. With our intuitive drag-and-drop interface, you can always keep track of your projects and boost your productivity. 
+                        </span>}
+                </div>
+                <div class="d-flex gap" style="padding: 10px;width: 100%;">
+                    <!-- <a href="https://join.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
+                        <app-button-left></app-button-left> 
+                    </a> -->
+                    <app-three-js-animation [texturePath]="'./../../../assets/projects-img/join.png'"></app-three-js-animation>
+                    <a href="https://github.com/SwenBreitung/join" target="_blank" rel="noopener noreferrer">
+                        <!-- <app-button-right></app-button-right> -->
+                        test
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="skill-container-img-left z-index10">
+        <div class="all-left">
+
+
+            <app-three-js-animation [texturePath]="'./../../../assets/projects-img/comming_soon.jpg'"></app-three-js-animation>
+
+        </div>
+
+        <div class="container-right-text z-index10">
+            <div class="all-text-right">
+                <h3>Flix Tube</h3>
+                <h4>Angular | HTML | CSS | DRF</h4>
+                @if (translateService.de) {
+                <span class="info-text-right">
+                    Flix Tube ist eine Videoplattform die auf Youtube aufgebaut ist. Diese
+                    wird im kern mit Angular sowie DRF geschrieben wo man selbst Videos in
+                    unterschiedlichen Auflösungen hochladen kann. Außerdem hat diese noch
+                    einen zusätzlichen Simple Chat.
+                </span>} @if (translateService.en) {
+                <span class="info-text-right">
+                    Flix Tube is a video platform built on the foundation of YouTube. It is primarily developed using Angular and Django REST Framework (DRF). On this platform, users can upload their own videos in various resolutions. Additionally, Flix Tube features a simple chat.
+                </span>}
+            </div>
+            <!-- <div class="d-flex gap" style="padding: 10px">
+                <app-button-left class="deactivate" backgroundColor="grey"></app-button-left>
+                <app-button-right (click)="layoutService.torgleDialog()"></app-button-right>
+            </div> -->
+        </div>
+    </div>
+
+</section>
