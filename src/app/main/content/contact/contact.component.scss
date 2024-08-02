@@ -203,6 +203,53 @@ textarea:focus,
     }
 }
 
+
+/* Keyframe für die Linie von links nach rechts */
+
+@keyframes slideIn {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+
+/* Keyframe für die Linie von rechts nach links */
+
+@keyframes slideOut {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+
+/* Basistyle für den animierten Container */
+
+.animated-line {
+    height: 2px;
+    background-color: black;
+    width: 0;
+}
+
+
+/* Klasse für die Eingangsanimation */
+
+.slide-in {
+    animation: slideIn 1s forwards;
+}
+
+
+/* Klasse für die Ausgangsanimation */
+
+.slide-out {
+    animation: slideOut 1s forwards;
+}
+
 @media(max-width:1050px) {
     .all-text-area {
         gap: 6%;

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, NgForm, Validators } from '@angular/forms';
 import { TranslateService } from '../../../service/translate.service';
 import { LayoutService } from '../../../service/layout.service';
@@ -33,6 +33,11 @@ export class ContactComponent {
   isSending: boolean = false;
   isError: boolean = false;
 
+  emailTouched: boolean = false;
+  emailValidated: boolean = false;
+
+
+  @ViewChild('line') line!: ElementRef;
   contactData = {
     name: '',
     email: '',
@@ -44,6 +49,8 @@ export class ContactComponent {
     message: ['', [Validators.required, Validators.minLength(4)]],
     checkbox: [false, Validators.requiredTrue]
   });
+  
+
 
   post = {
     endPoint: 'https://portfolio.swen-breitung.de/sendMail.php',
@@ -101,5 +108,17 @@ export class ContactComponent {
 
   torgleIsSending() {
     this.isSending = !this.isSending;
+  }
+
+  onFocus() {
+    this.line.nativeElement.classList.remove('slide-out');
+    this.line.nativeElement.classList.add('slide-in');
+  }
+
+  onBlur() {
+    this.line.nativeElement.classList.remove('slide-in');
+    this.line.nativeElement.classList.add('slide-out');
+    this.emailTouched = true;
+    
   }
 }
