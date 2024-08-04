@@ -33,15 +33,12 @@
                 <input type="email" placeholder="E-Mail" name="email" [(ngModel)]="contactData.email" required pattern="^(?![.%+])[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailField="ngModel" (focus)="onFocus()" (blur)="onBlur()" />
                 <div class="h28px">
                     <div *ngIf="translateService.de">
-                        <div class="error" *ngIf="(emailField.invalid && emailValidated  && contactData.email.length > 0) || (contactForm.submitted && emailField.invalid)">
+                        <div class="error" *ngIf="(emailField.invalid && emailTouched && contactData.email.length > 0) || (contactForm.submitted && emailField.invalid)">
                             Gültige E-Mail ist erforderlich.
                         </div>
                     </div>
                     <div *ngIf="translateService.en">
-                        <div class="error" *ngIf="
-                        emailField.invalid && emailField.touched ||
-                        contactForm.submitted && emailField.invalid
-                      ">
+                        <div class="error" *ngIf="(emailField.invalid && emailValidated  && contactData.email.length > 0) || (contactForm.submitted && emailField.invalid)">
                             A valid email is required.
                         </div>
                     </div>
