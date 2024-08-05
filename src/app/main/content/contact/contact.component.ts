@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, NgForm, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, FormsModule, NgForm, NgModel, Validators } from '@angular/forms';
 import { TranslateService } from '../../../service/translate.service';
 import { LayoutService } from '../../../service/layout.service';
 import { Router } from '@angular/router';
@@ -36,6 +36,7 @@ export class ContactComponent {
   emailTouched: boolean = false;
   emailValidated: boolean = false;
 
+  textareaContent: string = '';
 
   @ViewChild('line') line!: ElementRef;
   contactData = {
@@ -50,8 +51,6 @@ export class ContactComponent {
     checkbox: [false, Validators.requiredTrue]
   });
   
-
-
   post = {
     endPoint: 'https://portfolio.swen-breitung.de/sendMail.php',
     body: (payload: any) => JSON.stringify(payload),
@@ -115,10 +114,30 @@ export class ContactComponent {
     this.line.nativeElement.classList.add('slide-in');
   }
 
-  onBlur() {
+
+  onBlur(emailField: NgModel) {
     this.line.nativeElement.classList.remove('slide-in');
     this.line.nativeElement.classList.add('slide-out');
-    this.emailTouched = true;
-    
+    if (this.contactData.email.length > 0) {
+      this.emailTouched = true;
+    }else {
+      this.emailTouched = false;
+    }
+    if (emailField.invalid && this.emailTouched) {
+      this.line.nativeElement.classList.add('slide-out', 'error-line');
+    } else {
+      this.line.nativeElement.classList.add('slide-out');
+      this.line.nativeElement.classList.remove('error-line');
+    }
+  }
+
+ 
+
+  autoGrow(event: Event) {
+    const textarea = event.target as HTMLTextAreaElement;
+    if (textarea) {
+      textarea.style.height = 'auto'; // Setzt die Höhe zurück, um den Scrollbereich zu ermitteln
+      textarea.style.height = textarea.scrollHeight + 'px'; // Setzt die Höhe auf die Scrollhöhe
+    }
   }
 }

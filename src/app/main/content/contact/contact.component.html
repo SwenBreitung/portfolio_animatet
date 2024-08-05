@@ -30,7 +30,7 @@
             </div>
             <div class="width100p p8">
                 <!-- <label for="email">E-Mail</label> -->
-                <input type="email" placeholder="E-Mail" name="email" [(ngModel)]="contactData.email" required pattern="^(?![.%+])[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailField="ngModel" (focus)="onFocus()" (blur)="onBlur()" />
+                <input type="email" placeholder="E-Mail" name="email" [(ngModel)]="contactData.email" required pattern="^(?![.%+])[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailField="ngModel" (focus)="onFocus()" (blur)="onBlur(emailField)" />
                 <div class="h28px">
                     <div *ngIf="translateService.de">
                         <div class="error" *ngIf="(emailField.invalid && emailTouched && contactData.email.length > 0) || (contactForm.submitted && emailField.invalid)">
@@ -38,7 +38,7 @@
                         </div>
                     </div>
                     <div *ngIf="translateService.en">
-                        <div class="error" *ngIf="(emailField.invalid && emailValidated  && contactData.email.length > 0) || (contactForm.submitted && emailField.invalid)">
+                        <div class="error" *ngIf="(emailField.invalid && (emailField.touched || contactForm.submitted))">
                             A valid email is required.
                         </div>
                     </div>
@@ -46,11 +46,12 @@
                 <div class="animated-line" #line></div>
             </div>
 
-            <div class="width100p p8 ">
-                @if (translateService.de) {
+            <div class="width100p p8 textarea-container">
+                <!-- @if (translateService.de) {
                 <label for="">Nachrichten Formular</label> }@if (translateService.en) {
-                <label for="">Message</label> }
-                <textarea name="message" minlength="20" [(ngModel)]="contactData.message" required #messageField="ngModel"></textarea>
+                <label for="">Message</label> } -->
+                <textarea name="message" minlength="20" [(ngModel)]="contactData.message" (input)="autoGrow($event)" required #messageField="ngModel" placeholder=" "></textarea>
+                <label for="message" class="textarea-placeholder">Message</label>
 
                 <div class="h28px">
                     @if (translateService.de) {

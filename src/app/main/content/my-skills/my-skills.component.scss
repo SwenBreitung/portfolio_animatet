@@ -26,6 +26,18 @@ section {
 
 .header {
     font-size: 70px;
+    display: flex;
+}
+
+.head-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-bottom: 16px;
+}
+
+app-chevron-icon {
+    padding-bottom: 16px;
 }
 
 .d-flex {
@@ -75,8 +87,11 @@ section {
 .right-container {
     position: relative;
     gap: 42px;
-    @include column();
-    @include center-flex;
+    display: flex;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    padding-left: 40px;
 }
 
 .main-button {
@@ -85,6 +100,12 @@ section {
 
 .responsiv-button {
     display: none;
+}
+
+#my-skills {
+    flex-direction: column;
+    @include column($column: column-reverse);
+    align-items: flex-start;
 }
 
 @keyframes switchLogo {
@@ -101,6 +122,7 @@ section {
     img {
         transform: scale(1.1);
         animation: switchLogo 2s infinite;
+        animation-iteration-count: 1;
         transform-style: preserve-3d;
     }
 }
@@ -156,10 +178,6 @@ section {
     }
     .responsiv-button {
         display: flex;
-    }
-    #my-skills {
-        flex-direction: column;
-        @include column($column: column-reverse);
     }
     app-button {
         padding-top: 20px;

@@ -15,8 +15,8 @@
             <div>Firebase</div>
         </div>
         <div class="container-img">
-            <img src="./../../../assets/icons/git.svg" alt="">
-            <div>Git</div>
+            <img src="./../../../assets/skills-icons/github.svg" alt="">
+            <div>Github</div>
         </div>
         <div class="container-img">
             <img src="./../../../assets/skills-icons/material.svg" alt="">
@@ -50,8 +50,8 @@
             <div>Gimp</div>
         </div>
         <div class="container-img">
-            <img src="./../../../assets/skills-icons/github_button.svg" alt="">
-            <div>Github</div>
+            <img src="./../../../assets/skills-icons/git.svg" alt="">
+            <div>Git</div>
         </div>
         <div class="container-img">
             <img src="./../../../assets/skills-icons/google_cloud.svg" alt="">
@@ -68,8 +68,9 @@
 
     </div>
     <div class="right-container text-padding-right" data-aos="fade-down-left">
-        <div>
-            <div class=" flex-center header ">
+        <div class="head-container">
+            <app-chevron-icon></app-chevron-icon>
+            <div class="header ">
                 @if (translateService.de) {
                 <h2 class="section-heading ">Meine Skills</h2>
                 }@if (translateService.en) {
@@ -77,20 +78,6 @@
                 }
                 <div class="horizontal-line" style="position:absolute; right: 0; "></div>
             </div>
-            @if (translateService.de) {
-            <span>
-                Ich habe meine Fullstack-Entwicklungsfähigkeiten ausgebaut, was es mir ermöglicht hat, verschiedene reale Projekte zu erstellen.
-            </span> } @if (translateService.en) {
-            <span>
-                    I have grown my Fullstack developments skills that have allowed me to create different real projects.
-                </span> }
         </div>
-        <!-- @if (translateService.de) { -->
-        <!-- <app-button (click)="layoutService.scrollToSection('portfolio')" class="main-button" text="Klick mich"></app-button>
-        } @if (translateService.en) {
-        <app-button (click)="layoutService.scrollToSection('contact-me')" class="main-button" text="Get in touch"></app-button>
-        } -->
     </div>
-
-
 </section>

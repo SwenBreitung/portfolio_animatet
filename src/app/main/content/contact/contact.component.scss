@@ -48,6 +48,10 @@ section {
     padding: 8px
 }
 
+.error-line {
+    background-color: red !important;
+}
+
 .right-side {
     padding-right: 48px;
     @include center-flex();
@@ -61,10 +65,8 @@ section {
         border: var(--second-main-color) solid 2px;
         border-radius: 10px;
         background-color: var(--main-background-color);
-        margin: 5px;
         width: 100%;
         color: var(--main-text-color);
-        padding: 10px;
     }
     input {
         height: 30px;
@@ -77,9 +79,6 @@ section {
     textarea:focus {
         outline: none;
         border: var(--hover-color) solid 2px !important;
-    }
-    textarea {
-        height: 200px;
     }
     button {
         width: 193px;
@@ -204,6 +203,81 @@ textarea:focus,
 }
 
 
+/* Container für die Textarea */
+
+.textarea-container {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Basistyle für die Textarea */
+
+.textarea-container textarea {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: padding-top 0.3s;
+}
+
+
+/* Fokusstil für die Textarea */
+
+.textarea-container textarea:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+
+/* Stil für den Platzhalter */
+
+.textarea-placeholder {
+    position: absolute;
+    top: 26px;
+    left: 12px;
+    font-size: 16px;
+    color: #aaa;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.3s;
+}
+
+
+/* Verschiebe den Platzhalter nach oben und mache die Schrift kleiner, wenn das Textarea fokussiert ist oder Text enthält */
+
+.textarea-container textarea:focus+.textarea-placeholder,
+.textarea-container textarea:not(:placeholder-shown)+.textarea-placeholder {
+    top: 0;
+    font-size: 12px;
+    color: #66afe9;
+    transform: translateY(-100%);
+}
+
+textarea {
+    width: 100%;
+    resize: none;
+    overflow: hidden;
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+/* Fokusstil für die Textarea */
+
+textarea:focus {
+    border-color: #66afe9;
+    outline: none;
+    box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
+}
+
+
 /* Keyframe für die Linie von links nach rechts */
 
 @keyframes slideIn {
@@ -227,27 +301,44 @@ textarea:focus,
     }
 }
 
-
-/* Basistyle für den animierten Container */
+.animated-line {
+    height: 2px;
+    background-color: grey;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
 
 .animated-line {
     height: 2px;
-    background-color: black;
-    width: 0;
+    background-color: grey;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
 }
 
+.animated-line::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: grey;
+    left: 0;
+    top: 0;
+}
 
-/* Klasse für die Eingangsanimation */
-
-.slide-in {
+.slide-in::after {
+    background-color: turquoise;
     animation: slideIn 1s forwards;
 }
 
-
-/* Klasse für die Ausgangsanimation */
-
-.slide-out {
+.slide-out::after {
+    background-color: turquoise;
     animation: slideOut 1s forwards;
+}
+
+.error::after {
+    background-color: red !important;
 }
 
 @media(max-width:1050px) {
@@ -267,6 +358,9 @@ textarea:focus,
         font-size: 9px;
     }
 }
+
+
+/* Basistyle für die Textarea */
 
 @media(max-width:700px) {
     .all-text-area {

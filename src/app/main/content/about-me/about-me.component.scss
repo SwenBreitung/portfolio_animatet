@@ -11,17 +11,16 @@
     
     .text-container {
         width: 100%;
+        display: flex;
+        flex-direction: column;
     }
     
     img {
         width: 350px;
     }
     
-    // :root {
-    //     --secondary-color: #00cccc;
-    //     --main-background: #00ffff;
-    // }
     .button-section {
+        width: 220px;
         display: inline-flex;
         align-items: center;
         background-color: var(--main-background);
@@ -72,12 +71,10 @@
     
     .button-section svg .inner {
         fill: var(--main-background);
-        /* Stellt sicher, dass die Hintergrundfarbe des Containers angezeigt wird */
     }
     
     .button-section:hover svg .inner {
         fill: var(--main-background-hover);
-        /* Ändert die Farbe des inneren Polygons beim Hover */
     }
     
     .animated-text {
@@ -101,9 +98,7 @@
     #animation-container {
         position: relative;
         width: 300px;
-        /* Beispiel-Breite */
         height: 200px;
-        /* Beispiel-Höhe */
         overflow: hidden;
     }
     
@@ -143,12 +138,3 @@
             opacity: 1;
         }
     }
-    
-    // .button-section {
-    //     display: flex;
-    //     height: 24px;
-    //     align-items: center;
-    //     svg {
-    //         width: 16px;
-    //     }
-    // }

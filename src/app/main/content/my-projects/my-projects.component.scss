@@ -27,6 +27,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding-bottom: 16px;
 }
 
 .header {
@@ -48,6 +49,7 @@ a:hover {
     display: flex;
     text-align: start;
     max-width: 470px;
+    font-size: 12px;
 }
 
 .info-text-left {
@@ -101,6 +103,7 @@ a:hover {
     display: flex;
     text-align: start;
     max-width: 470px;
+    font-size: 12px;
 }
 
 .img {
@@ -116,6 +119,17 @@ a:hover {
     }
 }
 
+.chevron-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    span {
+        color: var(--secondary-color);
+        font-size: 9px;
+        font-weight: bold;
+    }
+}
+
 .skill-overlay {}
 
 .skill-container-img-right {}
@@ -124,6 +138,21 @@ a:hover {
 .skill-container-img-left {
     width: 100%;
     display: flex;
+}
+
+.header-container {
+    display: flex;
+    gap: 8px;
+    padding-bottom: 4px;
+}
+
+h3,
+h4 {
+    color: white;
+}
+
+h4 {
+    padding-bottom: 8px;
 }
 
 @keyframes rotateRight {
