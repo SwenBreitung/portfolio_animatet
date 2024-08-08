@@ -194,38 +194,29 @@ textarea:focus,
         position: relative;
         z-index: 50;
         padding: 20px;
-        // background-image: url('./../../../assets/icons/up_arrow_white.svg');
         background-repeat: no-repeat;
-        &:hover {
-            // background-image: url('./../../../assets/icons/up_arrow_green.svg');
-        }
     }
 }
-
-
-/* Container für die Textarea */
 
 .textarea-container {
     position: relative;
     width: 100%;
 }
 
-
-/* Basistyle für die Textarea */
-
 .textarea-container textarea {
     width: 100%;
+    height: 38px;
     resize: none;
     overflow: hidden;
     box-sizing: border-box;
+    padding: 8px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    transition: padding-top 0.3s;
+    transition: padding-top 0.3s, height 0.3s;
+    background-color: #222;
+    color: #fff;
 }
-
-
-/* Fokusstil für die Textarea */
 
 .textarea-container textarea:focus {
     border-color: #66afe9;
@@ -233,52 +224,41 @@ textarea:focus,
     box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
-
-/* Stil für den Platzhalter */
-
 .textarea-placeholder {
     position: absolute;
-    top: 26px;
+    top: 8px;
     left: 12px;
     font-size: 16px;
     color: #aaa;
     pointer-events: none;
-    transform: translateY(-50%);
     transition: all 0.3s;
 }
 
-
-/* Verschiebe den Platzhalter nach oben und mache die Schrift kleiner, wenn das Textarea fokussiert ist oder Text enthält */
-
 .textarea-container textarea:focus+.textarea-placeholder,
 .textarea-container textarea:not(:placeholder-shown)+.textarea-placeholder {
-    top: 0;
+    top: -10px;
+    left: 8px;
     font-size: 12px;
-    color: #66afe9;
-    transform: translateY(-100%);
 }
 
 textarea {
     width: 100%;
+    height: 38px;
     resize: none;
     overflow: hidden;
     box-sizing: border-box;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
+    background-color: #222;
+    color: #fff;
 }
-
-
-/* Fokusstil für die Textarea */
 
 textarea:focus {
     border-color: #66afe9;
     outline: none;
     box-shadow: 0 0 8px rgba(102, 175, 233, 0.6);
 }
-
-
-/* Keyframe für die Linie von links nach rechts */
 
 @keyframes slideIn {
     from {
@@ -288,9 +268,6 @@ textarea:focus {
         width: 100%;
     }
 }
-
-
-/* Keyframe für die Linie von rechts nach links */
 
 @keyframes slideOut {
     from {

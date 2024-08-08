@@ -9,31 +9,30 @@
         }
     </div>
 
-
-
     <div class="right-side  z-index10" data-aos="fade-left">
         <form #contactForm="ngForm" class="form-container" (ngSubmit)="onSubmit(contactForm)">
-
             <div class="width100p p8 ">
-                <label for="">Name</label>
-
-                <input type="text" minlength="3" name="name" [(ngModel)]="contactData.name" required #nameField="ngModel">
+                <input type="text" placeholder="Name" name="name" [(ngModel)]="contactData.name" required minlength="3" #nameField="ngModel" (focus)="onFocus('name')" (blur)="onBlur('name', nameField)" />
+                <div class="animated-line" #lineName></div>
                 <div class="h28px">
+
                     @if (translateService.de) {
-                    <div class="error" *ngIf="(nameField.invalid && nameField.touched) || (contactForm.submitted && nameField.invalid)">
+                    <div class="error" *ngIf="(nameField.invalid && nameField.touched && contactData.name.length > 0) || (contactForm.submitted && nameField.invalid && contactData.name.length > 0)">
                         Gebe bitte einen Namen mit midestens 3 Zeichen ein.
                     </div> } @if (translateService.en) {
-                    <div class="error" *ngIf="(nameField.invalid && nameField.touched) || (contactForm.submitted && nameField.invalid)">
+                    <div class="error" *ngIf="(nameField.invalid && nameField.touched && contactData.name.length > 0) || (contactForm.submitted && nameField.invalid && contactData.name.length > 0)">
                         Please enter a name with at least 3 characters.
                     </div> }
                 </div>
             </div>
+
             <div class="width100p p8">
-                <!-- <label for="email">E-Mail</label> -->
-                <input type="email" placeholder="E-Mail" name="email" [(ngModel)]="contactData.email" required pattern="^(?![.%+])[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailField="ngModel" (focus)="onFocus()" (blur)="onBlur(emailField)" />
+                <input type="email" placeholder="" name="email" [(ngModel)]="contactData.email" required pattern="^(?![.%+])[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailField="ngModel" (focus)="onFocus('email')" (blur)="onBlur('email', emailField)" />
+                <label for="E-Mail" class="textarea-placeholder">E-Mail</label>
+                <div class="animated-line" #lineEmail></div>
                 <div class="h28px">
                     <div *ngIf="translateService.de">
-                        <div class="error" *ngIf="(emailField.invalid && emailTouched && contactData.email.length > 0) || (contactForm.submitted && emailField.invalid)">
+                        <div class="error" *ngIf="(emailField.invalid && emailField.touched && contactData.email.length > 0) || (contactForm.submitted && emailField.invalid && contactData.email.length > 0)">
                             Gültige E-Mail ist erforderlich.
                         </div>
                     </div>
@@ -43,26 +42,21 @@
                         </div>
                     </div>
                 </div>
-                <div class="animated-line" #line></div>
+
             </div>
 
             <div class="width100p p8 textarea-container">
-                <!-- @if (translateService.de) {
-                <label for="">Nachrichten Formular</label> }@if (translateService.en) {
-                <label for="">Message</label> } -->
-                <textarea name="message" minlength="20" [(ngModel)]="contactData.message" (input)="autoGrow($event)" required #messageField="ngModel" placeholder=" "></textarea>
+                <textarea placeholder="" name="message" [(ngModel)]="contactData.message" required minlength="20" #messageField="ngModel" (focus)="onFocus('message')" (blur)="onBlur('message', messageField)" (input)="autoGrow($event)"></textarea>
                 <label for="message" class="textarea-placeholder">Message</label>
-
+                <div class="animated-line" #lineTextarea></div>
                 <div class="h28px">
                     @if (translateService.de) {
-                    <div class="error" *ngIf="messageField.invalid  && messageField.touched">
+                    <div class="error" *ngIf="(messageField.invalid && messageField.touched && contactData.message.length > 0) || (contactForm.submitted && messageField.invalid && contactData.message.length > 0)">
                         Gebe bitte Midestens 20 Zeichen ein.
                     </div>}@if (translateService.en) {
-                    <div class="error" *ngIf="messageField.invalid  && messageField.touched">
+                    <div class="error" *ngIf="(messageField.invalid && messageField.touched && contactData.message.length > 0) || (contactForm.submitted && messageField.invalid && contactData.message.length > 0)">
                         Please enter at least 20 characters.
                     </div>}
-
-
                 </div>
             </div>
 

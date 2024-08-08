@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, FormsModule, NgForm, NgModel, Validators } from
 import { TranslateService } from '../../../service/translate.service';
 import { LayoutService } from '../../../service/layout.service';
 import { Router } from '@angular/router';
-
+type ContactField = 'name' | 'email' | 'message';
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -25,7 +25,14 @@ export class ContactComponent {
     private http: HttpClient,
     private router: Router,
     private fbuilder: FormBuilder
-  ) { }
+  ) { 
+    this.formData = this.fbuilder.group({
+      email: ['', [Validators.required, Validators.email]],
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      message: ['', [Validators.required, Validators.minLength(20)]]
+    });
+
+  }
   [x: string]: any;
   isAgreed: boolean = false;
   mailTest: boolean = false;
@@ -38,12 +45,16 @@ export class ContactComponent {
 
   textareaContent: string = '';
 
-  @ViewChild('line') line!: ElementRef;
+  @ViewChild('lineEmail') lineEmail!: ElementRef;
+  @ViewChild('lineName') lineName!: ElementRef;
+  @ViewChild('lineTextarea') lineTextarea!: ElementRef;
+  
   contactData = {
     name: '',
     email: '',
     message: ''
   }
+  
   formData: FormGroup = this.fbuilder.group({
     name: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
@@ -109,29 +120,37 @@ export class ContactComponent {
     this.isSending = !this.isSending;
   }
 
-  onFocus() {
-    this.line.nativeElement.classList.remove('slide-out');
-    this.line.nativeElement.classList.add('slide-in');
+  onFocus(fieldName: ContactField) {
+    const line = this.getLineElement(fieldName);
+    if(!line){
+      return
+    }
+      line.nativeElement.classList.remove('slide-out');
+      line.nativeElement.classList.add('slide-in');
   }
 
+  onBlur(fieldName: ContactField, control: NgModel) {
+    const line = this.getLineElement(fieldName);
+    if (line) {
+      line.nativeElement.classList.remove('slide-in');
+      line.nativeElement.classList.add('slide-out');
 
-  onBlur(emailField: NgModel) {
-    this.line.nativeElement.classList.remove('slide-in');
-    this.line.nativeElement.classList.add('slide-out');
-    if (this.contactData.email.length > 0) {
-      this.emailTouched = true;
-    }else {
-      this.emailTouched = false;
-    }
-    if (emailField.invalid && this.emailTouched) {
-      this.line.nativeElement.classList.add('slide-out', 'error-line');
-    } else {
-      this.line.nativeElement.classList.add('slide-out');
-      this.line.nativeElement.classList.remove('error-line');
+      if (control.invalid && (control.dirty || control.touched) && this.contactData[fieldName].length > 0) {
+        line.nativeElement.classList.add('error-line');
+      } else {
+        line.nativeElement.classList.remove('error-line');
+      }
     }
   }
 
- 
+  getLineElement(fieldName: ContactField): ElementRef | null {
+    const lines: { [key in ContactField]: ElementRef } = {
+      email: this.lineEmail,
+      name: this.lineName,
+      message: this.lineTextarea,
+    };
+    return lines[fieldName] || null;
+  }
 
   autoGrow(event: Event) {
     const textarea = event.target as HTMLTextAreaElement;
