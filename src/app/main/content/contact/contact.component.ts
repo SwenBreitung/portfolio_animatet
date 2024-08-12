@@ -5,6 +5,8 @@ import { FormBuilder, FormGroup, FormsModule, NgForm, NgModel, Validators } from
 import { TranslateService } from '../../../service/translate.service';
 import { LayoutService } from '../../../service/layout.service';
 import { Router } from '@angular/router';
+import { ChevronIconComponent } from "../../../ui-components/chevron-icon/chevron-icon.component";
+import { ButtonStandardComponent } from "../../../ui-components/button-standard/button-standard.component";
 type ContactField = 'name' | 'email' | 'message';
 @Component({
   selector: 'app-contact',
@@ -13,7 +15,9 @@ type ContactField = 'name' | 'email' | 'message';
     FormsModule,
     CommonModule,
     HttpClientModule,
-  ],
+    ChevronIconComponent,
+    ButtonStandardComponent
+],
 
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss'

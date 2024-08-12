@@ -1,18 +1,22 @@
 <section id="contact-me" class="contact">
+    <div class="header-container">
 
-    <div class="header z-index10">
-        <div class="horizontal-line"></div>
-        @if (translateService.de) {
-        <h2 class="section-heading">Sag Hallo</h2>
-        }@if (translateService.en) {
-        <h2 class="section-heading">Sey hello</h2>
-        }
+        <app-chevron-icon></app-chevron-icon>
+
+        <div class="header z-index10">
+            <div class="horizontal-line"></div>
+            @if (translateService.de) {
+            <h2 class="section-heading">Sag Hallo</h2>
+            }@if (translateService.en) {
+            <h2 class="section-heading">Sey hello</h2>
+            }
+        </div>
     </div>
-
     <div class="right-side  z-index10" data-aos="fade-left">
         <form #contactForm="ngForm" class="form-container" (ngSubmit)="onSubmit(contactForm)">
-            <div class="width100p p8 ">
-                <input type="text" placeholder="Name" name="name" [(ngModel)]="contactData.name" required minlength="3" #nameField="ngModel" (focus)="onFocus('name')" (blur)="onBlur('name', nameField)" />
+            <div class="width100p p8 textarea-container">
+                <input type="text" placeholder="" name="name" [(ngModel)]="contactData.name" required minlength="3" #nameField="ngModel" (focus)="onFocus('name')" (blur)="onBlur('name', nameField)" />
+                <label for="E-Mail" class="textarea-placeholder">Name</label>
                 <div class="animated-line" #lineName></div>
                 <div class="h28px">
 
@@ -26,8 +30,8 @@
                 </div>
             </div>
 
-            <div class="width100p p8">
-                <input type="email" placeholder="" name="email" [(ngModel)]="contactData.email" required pattern="^(?![.%+])[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" #emailField="ngModel" (focus)="onFocus('email')" (blur)="onBlur('email', emailField)" />
+            <div class="width100p p8 textarea-container">
+                <input type="email" placeholder="" name="email" [(ngModel)]="contactData.email" required email #emailField="ngModel" (focus)="onFocus('email')" (blur)="onBlur('email', emailField)" />
                 <label for="E-Mail" class="textarea-placeholder">E-Mail</label>
                 <div class="animated-line" #lineEmail></div>
                 <div class="h28px">
@@ -67,9 +71,8 @@
                     </label> @if (translateService.de) {
                 <div class="d-flex checkbox-text">
                     <span> Ich habe die </span>
-                    <br>
                     <div class="police-container cursor-pointer" (click)="navigateToPolicy()">
-                        &nbsp;Datenschutzrichtlinie&nbsp; </div><br>
+                        &nbsp;Datenschutzrichtlinie&nbsp; </div>
                     <span> gelesen und stimme der Verarbeitung meiner Daten wie beschrieben zu.</span>
                 </div>
                 } @if (translateService.en) {
@@ -83,12 +86,10 @@
                 }
             </div>
             @if (translateService.de) {
-            <button type="submit" [disabled]="!contactForm.valid || !isAgreed">
-                    Nachricht senden
-                </button> } @if (translateService.en) {
-            <button type="submit" [disabled]="!contactForm.valid || !isAgreed">
-                    Send message
-                </button>}
+            <app-button-standard type="submit" [buttonText]="'Nachricht senden'" [isDisabled]="!contactForm.valid || !isAgreed"></app-button-standard>
+            }@if (translateService.en) {
+            <app-button-standard type="submit" [buttonText]="'Send message'" [isDisabled]="!contactForm.valid || !isAgreed"></app-button-standard>
+            }
         </form>
     </div>
 
@@ -96,7 +97,6 @@
     <div class="background-img"><img src="./assets/brackground-img/green_shadow3.svg" alt=""></div>
     <div *ngIf="isLoading" class="loading-container">
         @if (translateService.de) {
-
         <div class="loading-bar">
             Lädt...
         </div>
@@ -104,8 +104,8 @@
         <div class="loading-bar">
             Loading...
         </div>}
-
     </div>
+
     <div (click)="torgleIsSending()" *ngIf="isSending" class="loading-container">
         <div class="sending-button">
             @if(isError){ @if (translateService.de) {
@@ -120,8 +120,5 @@
         </div>
     </div>
 
-    <div class="arrow-container">
-        <div></div>
-        <div (click)="layoutService.scrollToSection('hero')" class="arrow-img"></div>
-    </div>
+
 </section>

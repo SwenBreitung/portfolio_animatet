@@ -1,0 +1,12 @@
+button {
+    background-color: var(--secondary-color);
+    border: none;
+    padding: 8px 16px;
+    color: var(--main-background);
+    cursor: pointer;
+    clip-path: polygon(0 0, 100% 0, 100% 50%, 88% 100%, 0 100%);
+    &:hover {
+        padding: 12px 20px;
+        font-weight: bold;
+    }
+}
