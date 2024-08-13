@@ -1,16 +1,21 @@
 import { AfterViewInit, Component,ElementRef  } from '@angular/core';
 import{ ChevronIconComponent } from './../../../ui-components/chevron-icon/chevron-icon.component'
+import { HoverButtonComponent } from "../../../ui-components/hover-button/hover-button.component";
+import { TranslateService } from "./../../../service/translate.service"
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [ChevronIconComponent],
+  imports: [ChevronIconComponent, HoverButtonComponent],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent implements AfterViewInit{
   private japaneseChars: string[] = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ"];
 
-  constructor(private elementRef: ElementRef) {}
+  constructor(
+    private elementRef: ElementRef,   
+    public translateService:TranslateService,
+  ) {}
 
   ngAfterViewInit() {
     const animationContainer = this.elementRef.nativeElement.querySelector('#animation-container');
@@ -28,14 +33,14 @@ export class AboutMeComponent implements AfterViewInit{
 
   private startAnimations() {
     const animation = this.elementRef.nativeElement.querySelector('#animation');
-    const bild = this.elementRef.nativeElement.querySelector('#bild');
+    const heroImage = this.elementRef.nativeElement.querySelector('#hero-image');
 
     // Start the slideIn animation
     animation.style.animation = 'slideIn 2s forwards';
 
     // Make the image visible halfway through the slideIn animation
     setTimeout(() => {
-      bild.style.opacity = '1';
+      heroImage.style.opacity = '1';
     }, 500);
 
     animation.addEventListener('animationend', () => {

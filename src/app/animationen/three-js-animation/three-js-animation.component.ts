@@ -65,6 +65,10 @@ export class ThreeJsAnimationComponent implements OnInit, AfterViewInit, OnDestr
 
   private initThreeJS(): void {
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    
+    // Set the pixel ratio to the maximum possible value
+    this.renderer.setPixelRatio(Math.max(window.devicePixelRatio, 2));
+
     this.renderer.setClearColor(new THREE.Color('rgb(18, 18, 18)'), 1); // Set background color with alpha channel
 
     this.scene = new THREE.Scene();
@@ -77,6 +81,7 @@ export class ThreeJsAnimationComponent implements OnInit, AfterViewInit, OnDestr
 
     const textureLoader = new THREE.TextureLoader();
     textureLoader.load(this.texturePath, (texture) => {
+      texture.anisotropy = this.renderer.capabilities.getMaxAnisotropy(); // Set anisotropy to maximum
       material.map = texture;
       material.needsUpdate = true;
       this.imageMesh = new THREE.Mesh(geometry, material);
@@ -132,3 +137,4 @@ export class ThreeJsAnimationComponent implements OnInit, AfterViewInit, OnDestr
     this.targetRotationY = 0;
   }
 }
+

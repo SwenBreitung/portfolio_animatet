@@ -7,10 +7,10 @@
         </div>
         <div>@if (translateService.de) {
             <span class="info-text">
-                Diese Seite ist ein Beispiel meiner Arbeit - probieren Sie sie gerne aus
+               Hey, hier ist ein teil meiner Arbeit, Du kannst es dir gerne genauer anschauen. 
             </span>}@if (translateService.en) {
             <span class="info-text">
-                This page is a sample of my work - please feel free to try them out.
+                Hey, here is a part of my work. Feel free to take a closer look.
             </span>}
         </div>
     </div>
@@ -43,32 +43,39 @@
                             Design. This app enables real-time chats, private messaging, and
                             channel creation—ideal for teams in need of fast and streamlined
                             communication.
+                            
                         </span> }
                     </div>
-                    <div class="d-flex gap" style="padding: 10px">
+                    <div class="d-flex gap8">
+
+
+                    </div>
+                    <div class="d-flex gap8" style="padding: 10px">
                         <a href="https://swen-breitung.de/" target="_blank" rel="noopener noreferrer">
-                            <!-- <app-button-left></app-button-left> -->
+                            <app-button-right></app-button-right>
                         </a>
                         <a href="https://github.com/SwenBreitung/daBubble" target="_blank" rel="noopener noreferrer">
-                            <!-- <app-button-right></app-button-right> -->
+                            <app-button-standard></app-button-standard>
                         </a>
                     </div>
                 </div>
                 <div class="container-right-img" data-aos="fade-down-left">
 
                     <app-three-js-animation [texturePath]="'./../../../assets/projects-img/da_bubble.png'"></app-three-js-animation>
-
+                    <!--  -->
                 </div>
             </div>
         </div>
     </div>
     <div>
         <div class="skill-container-img-left z-index10">
-            <div class="all-left">
-                <div class="img all-text-left" data-aos="zoom-out-right">
-                    <app-three-js-animation [texturePath]="'./../../../assets/projects-img/ell_polloco.png'"></app-three-js-animation>
-                </div>
-            </div>
+            <!-- <div class="all-left">
+                <div class="img all-text-left" data-aos="zoom-out-right"> -->
+            <app-three-js-animation [texturePath]="'./../../../../assets/projects-img/join.png'"></app-three-js-animation>
+
+            <!-- <app-three-js-animation [texturePath]="'./../../../assets/projects-img/ell_polloco.png'"></app-three-js-animation> -->
+            <!-- </div> -->
+            <!-- </div> -->
             <div class="container-right-text z-index10">
                 <div class="all-text-right">
                     <div class="header-container">
@@ -92,12 +99,12 @@
                         boss, which attack the player.
                     </span> }
                 </div>
-                <div class="d-flex gap" style="padding: 10px">
+                <div class="d-flex gap8" style="padding: 10px">
                     <a href="https://ell-polloco.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
-                        <!-- <app-button-left></app-button-left> -->
+                        <app-button-right></app-button-right>
                     </a>
                     <a href="https://github.com/SwenBreitung/EllPolloloco" target="_blank" rel="noopener noreferrer">
-                        <!-- <app-button-right></app-button-right> -->
+                        <app-button-standard></app-button-standard>
                     </a>
                 </div>
             </div>
@@ -125,18 +132,17 @@
                             My Kanban board combines contact management and task planning in a seamless, user-friendly tool. It allows for efficient storage of contacts, easy creation of tasks, and
                             their structured organization. With our intuitive drag-and-drop interface, you can always keep track of your projects and boost your productivity. 
                         </span>}
+                    <div class="d-flex gap8" style="padding: 10px;width: 100%;">
+                        <a href="https://join.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
+                            <app-button-right></app-button-right>
+                        </a>
+                        <a href="https://github.com/SwenBreitung/join" target="_blank" rel="noopener noreferrer">
+                            <app-button-standard></app-button-standard>
+                        </a>
+                    </div>
                 </div>
-                <div class="d-flex gap" style="padding: 10px;width: 100%;">
-                    <!-- <a href="https://join.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
-                        <app-button-left></app-button-left> 
-                    </a> -->
-                    <app-three-js-animation [texturePath]="'./../../../assets/projects-img/join.png'"></app-three-js-animation>
-                    <a href="https://github.com/SwenBreitung/join" target="_blank" rel="noopener noreferrer">
-                        <!-- <app-button-right></app-button-right> -->
-
-                    </a>
-                </div>
-
+                <app-three-js-animation [texturePath]="'./../../../assets/projects-img/ell_polloco.png'"></app-three-js-animation>
+                <!-- <app-three-js-animation [texturePath]="'./../../../../assets/projects-img/join.png'"></app-three-js-animation> -->
             </div>
         </div>
     </div>
@@ -170,11 +176,10 @@
                     Flix Tube is a video platform built on the foundation of YouTube. It is primarily developed using Angular and Django REST Framework (DRF). On this platform, users can upload their own videos in various resolutions. Additionally, Flix Tube features a simple chat.
                 </span>}
             </div>
-            <!-- <div class="d-flex gap" style="padding: 10px">
-                <app-button-left class="deactivate" backgroundColor="grey"></app-button-left>
-                <app-button-right (click)="layoutService.torgleDialog()"></app-button-right>
-            </div> -->
+            <div class="d-flex gap8" style="padding: 10px">
+                <app-button-right></app-button-right>
+                <app-button-standard></app-button-standard>
+            </div>
         </div>
     </div>
-
 </section>

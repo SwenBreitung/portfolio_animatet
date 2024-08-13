@@ -1,13 +1,13 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-button-standard',
+  selector: 'app-button-right',
   standalone: true,
   imports: [],
-  templateUrl: './button-standard.component.html',
-  styleUrl: './button-standard.component.scss'
+  templateUrl: './button-right.component.html',
+  styleUrl: './button-right.component.scss'
 })
-export class ButtonStandardComponent {
+export class ButtonRightComponent {
 
   @Input() buttonText: string = 'Default Text';
   @Input() actionMethod: () => void = () => { console.log('No action assigned!'); };
