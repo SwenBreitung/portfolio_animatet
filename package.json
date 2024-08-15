@@ -28,6 +28,7 @@
     "rxjs": "~7.8.0",
     "simplex-noise": "^4.0.1",
     "three": "^0.166.1",
+    "three-rounded-box": "^0.1.1",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
   },

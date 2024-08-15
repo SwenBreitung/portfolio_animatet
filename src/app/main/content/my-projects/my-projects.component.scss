@@ -3,6 +3,13 @@ section {
     position: relative;
 }
 
+.box {
+    flex: 1;
+    /* Beide Boxen nehmen den gleichen Platz ein */
+    height: 100%;
+    /* Nur zur Veranschaulichung */
+}
+
 .container-left-text {
     display: flex;
 }
