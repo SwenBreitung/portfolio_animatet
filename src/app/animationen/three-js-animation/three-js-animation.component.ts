@@ -316,7 +316,7 @@
 //     this.targetRotationY = 0;
 //   }
 // }
-import { Component, ElementRef, AfterViewInit, OnDestroy, ViewChild, HostListener } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, OnDestroy, ViewChild, HostListener, Input } from '@angular/core';
 import * as THREE from 'three';
 
 @Component({
@@ -341,11 +341,14 @@ import * as THREE from 'three';
 export class ThreeJsAnimationComponent implements AfterViewInit, OnDestroy {
   @ViewChild('rendererContainer', { static: true }) rendererContainer!: ElementRef;
 
+  // Hier ist das neue Input-Feld für die dynamische Bild-URL
+  @Input() textureUrl: string = ''; // Standardmäßig leer, kann dynamisch gesetzt werden.
+
   private renderer!: THREE.WebGLRenderer;
   private scene!: THREE.Scene;
   private camera!: THREE.PerspectiveCamera;
   private laptopGroup!: THREE.Group;
-  private laptopDisplay!: THREE.Mesh; // Füge das Display als Variable hinzu
+  private laptopDisplay!: THREE.Mesh;
   private animationFrameId!: number;
   private currentRotationX: number = 0;
   private currentRotationY: number = 0;
@@ -358,7 +361,6 @@ export class ThreeJsAnimationComponent implements AfterViewInit, OnDestroy {
     this.initThreeJs();
     this.onWindowResize(); 
     window.addEventListener('resize', this.onWindowResize.bind(this), false);  // Resize-Eventlistener
-
     this.animate();
   }
 
@@ -434,8 +436,9 @@ export class ThreeJsAnimationComponent implements AfterViewInit, OnDestroy {
     laptopScreen.position.z = -1;
     laptopScreen.castShadow = true;
 
+    // Dynamisches Laden des Bildes basierend auf dem Input-Feld
     const loader = new THREE.TextureLoader();
-    const screenTexture = loader.load('./../../../assets/projects-img/comming_soon.jpg');
+    const screenTexture = loader.load(this.textureUrl || './../../../assets/projects-img/comming_soon.jpg'); // Standardbild, wenn keine URL eingegeben wurde
     const displayGeometry = new THREE.PlaneGeometry(2.8, 1.8);
     const displayMaterial = new THREE.MeshBasicMaterial({ map: screenTexture });
     this.laptopDisplay = new THREE.Mesh(displayGeometry, displayMaterial);
@@ -559,7 +562,7 @@ export class ThreeJsAnimationComponent implements AfterViewInit, OnDestroy {
     this.laptopGroup.scale.set(scale, scale, scale); // Skaliere den Laptop gleichmäßig
     
     // Passe die Kameraposition an, um den Laptop größer erscheinen zu lassen
-    this.camera.position.set(0, 1.5, 2/ scale); // Kamera rückt näher heran, wenn skaliert wird
+    this.camera.position.set(0, 1.5, 2 / scale); // Kamera rückt näher heran, wenn skaliert wird
     this.camera.lookAt(0, 1, 0);  // Fokus auf den Mittelpunkt des Laptops
   }
 
