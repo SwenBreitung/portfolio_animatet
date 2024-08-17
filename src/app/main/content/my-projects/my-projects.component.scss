@@ -70,7 +70,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 100%;
+    width: 50%;
 }
 
 .container-right-img {
@@ -84,7 +84,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: start;
-    width: 100%;
+    width: 50%;
+    justify-content: center;
 }
 
 .all-left {
@@ -139,7 +140,15 @@ a:hover {
 
 .skill-overlay {}
 
-.skill-container-img-right {}
+.skill-container-img-right {
+    position: relative;
+    height: 380px;
+}
+
+app-three-js-animation {
+    height: auto;
+    width: 50%;
+}
 
 .skill-container-img-right,
 .skill-container-img-left {

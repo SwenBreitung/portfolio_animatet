@@ -16,10 +16,11 @@
 </section>
 
 <section class="skill-overlay">
+    <!--  -->
     <div class="skill-container-img-right z-index10">
         <div>
             <div class="skill-container-img-right z-index10">
-                <div class="container-left-text box">
+                <div class="container-left-text">
                     <div class="container-left-text">
                         <div class="header-container">
                             <div class="chevron-container">
@@ -44,65 +45,69 @@
                             
                         </span> }
                     </div>
-                    <div class="d-flex gap8">
-                    </div>
                     <div class="d-flex gap8" style="padding: 10px">
-                        <a href="https://swen-breitung.de/" target="_blank" rel="noopener noreferrer">
-                            <app-button-right></app-button-right>
-                        </a>
                         <a href="https://github.com/SwenBreitung/daBubble" target="_blank" rel="noopener noreferrer">
-                            <app-button-standard></app-button-standard>
+                            <app-button-right [buttonText]="'GitHub'"></app-button-right>
+                        </a>
+                        <a href="https://da-Bubble.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
+                            <app-button-standard [buttonText]="'Live'"></app-button-standard>
                         </a>
                     </div>
                 </div>
-                <div class="container-right-img box" data-aos="fade-down-left">
-                    <app-three-js-animation></app-three-js-animation>
-                    <!-- [texturePath]="'./../../../assets/projects-img/da_bubble.png'" -->
-                </div>
-            </div>
-        </div>
-    </div>
-    <div>
-        <div class="skill-container-img-left z-index10">
-            <div class="box">
-                <!-- [texturePath]="'./../../../../assets/projects-img/join.png'" -->
                 <app-three-js-animation></app-three-js-animation>
-            </div>
-            <div class="container-right-text z-index10 box">
-                <div class="all-text-right">
-                    <div class="header-container">
-                        <div class="chevron-container">
-                            <app-chevron-icon></app-chevron-icon>
-                            <span>02</span>
-                        </div>
-                        <h3>EllPolloloco</h3>
-                    </div>
-                    <h4>JavaScript | HTML | CSS</h4>
-                    @if (translateService.de) {
-                    <span class="info-text-right">
-                        „Ell Polloco“ ist ein kompaktes Jump-and-Run-Spiel im Cartoon-Stil. Das Ziel ist es, Feinde mit gezielten Sprüngen zu besiegen und den Endboss mit geschickt platzierten Salsa-Flaschen auszutricksen. Besondere Aufmerksamkeit erfordern die kleinen Küken, die vom Boss herbeigerufen werden und den Spieler angreifen.
-                    </span> }@if (translateService.en) {
-                    <span class="info-text-right">
-                        Ell Polloco' is a compact jump-and-run game in a cartoon style.
-                        Here, the objective is to defeat enemies with targeted jumps and
-                        outsmart the final boss using cleverly deployed salsa bottles.
-                        Special attention is required for the small chicks summoned by the
-                        boss, which attack the player.
-                    </span> }
-                </div>
-                <div class="d-flex gap8" style="padding: 10px">
-                    <a href="https://ell-polloco.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
-                        <app-button-right></app-button-right>
-                    </a>
-                    <a href="https://github.com/SwenBreitung/EllPolloloco" target="_blank" rel="noopener noreferrer">
-                        <app-button-standard></app-button-standard>
-                    </a>
-                </div>
+                <!-- [texturePath]="'./../../../assets/projects-img/da_bubble.png'" -->
             </div>
         </div>
     </div>
+    <div class="skill-container-img-right z-index10">
+        <div>
+            <div class="skill-container-img-right z-index10">
+                <app-three-js-animation></app-three-js-animation>
+                <div class="container-left-text">
+                    <div class="container-left-text">
+                        <div class="header-container">
+                            <div class="chevron-container">
+                                <app-chevron-icon></app-chevron-icon>
+                                <span>02</span>
+                            </div>
+                            <h3>EllPolloloco</h3>
+                        </div>
+                        <h4>JavaScript | HTML | CSS</h4>
+                        @if (translateService.de) {
+                        <span class="text-left">
+                            I've developed a Slack clone using Angular, Firebase, and Material
+                            Design. This app enables real-time chats, private messaging, and
+                            channel creation—ideal for teams in need of fast and streamlined
+                            communication.
+                        </span> } @if (translateService.en) {
+                        <span class="text-left">
+                            Ell Polloco' is a compact jump-and-run game in a cartoon style.
+                            Here, the objective is to defeat enemies with targeted jumps and
+                            outsmart the final boss using cleverly deployed salsa bottles.
+                            Special attention is required for the small chicks summoned by the
+                            boss, which attack the player.
+                            
+                        </span> }
+                    </div>
+
+                    <div class="d-flex gap8" style="padding: 10px">
+                        <a href="https://github.com/SwenBreitung/EllPolloloco" target="_blank" rel="noopener noreferrer">
+                            <app-button-right [buttonText]="'GitHub'"></app-button-right>
+                        </a>
+                        <a href="http://flix-tube.swen-breitung.de/ell-polloco.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
+                            <app-button-standard [buttonText]="'Live'"></app-button-standard>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- [texturePath]="'./../../../assets/projects-img/da_bubble.png'" -->
+            </div>
+        </div>
+    </div>
+    <!--  -->
     <div class="p16"></div>
-    <div class="skill-container-img-right box z-index10">
+    <!--  -->
+    <div class="skill-container-img-right z-index10">
         <div class="skill-container-img-right z-index10">
             <div class="container-left-text">
                 <div class="header-container">
@@ -121,11 +126,11 @@
                             their structured organization. With our intuitive drag-and-drop interface, you can always keep track of your projects and boost your productivity. 
                         </span>}
                 <div class="d-flex gap8" style="padding: 10px;width: 100%;">
-                    <a href="https://join.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
-                        <app-button-right></app-button-right>
-                    </a>
                     <a href="https://github.com/SwenBreitung/join" target="_blank" rel="noopener noreferrer">
-                        <app-button-standard></app-button-standard>
+                        <app-button-right [buttonText]="'GitHub'"></app-button-right>
+                    </a>
+                    <a href="https://join.swen-breitung.de/" target="_blank" rel="noopener noreferrer">
+                        <app-button-standard [buttonText]="'Live'"></app-button-standard>
                     </a>
                 </div>
             </div>
@@ -133,14 +138,11 @@
             <app-three-js-animation></app-three-js-animation>
         </div>
     </div>
-    <div class="skill-container-img-left box z-index10">
-        <div class="all-left box">
-            <!-- [texturePath]="'./../../../assets/projects-img/comming_soon.jpg'" -->
+    <!--  -->
+    <div class="skill-container-img-right z-index10">
+        <div class="skill-container-img-right z-index10">
             <app-three-js-animation></app-three-js-animation>
-        </div>
-
-        <div class="container-right-text z-index10">
-            <div class="all-text-right">
+            <div class="container-left-text">
                 <div class="header-container">
                     <div class="chevron-container">
                         <app-chevron-icon></app-chevron-icon>
@@ -148,72 +150,27 @@
                     </div>
                     <h3>Flix Tube</h3>
                 </div>
-
                 <h4>Angular | HTML | CSS | DRF</h4>
                 @if (translateService.de) {
-                <span class="info-text-right">
+                <span class="text-left">
                     Flix Tube ist eine Videoplattform die auf Youtube aufgebaut ist. Diese
                     wird im kern mit Angular sowie DRF geschrieben wo man selbst Videos in
                     unterschiedlichen Auflösungen hochladen kann. Außerdem hat diese noch
                     einen zusätzlichen Simple Chat.
-                </span>} @if (translateService.en) {
-                <span class="info-text-right">
-                    Flix Tube is a video platform built on the foundation of YouTube. It is primarily developed using Angular and Django REST Framework (DRF). On this platform, users can upload their own videos in various resolutions. Additionally, Flix Tube features a simple chat.
-                </span>}
+                        </span>}@if (translateService.en) { <span class="text-left">
+                            Flix Tube is a video platform built on the foundation of YouTube. It is primarily developed using Angular and Django REST Framework (DRF). On this platform, users can upload their own videos in various resolutions. Additionally, Flix Tube features a simple chat.
+                        </span>}
+                <div class="d-flex gap8" style="padding: 10px;width: 100%;">
+                    <a href="https://github.com/SwenBreitung/flix-tube-frontend" target="_blank" rel="noopener noreferrer">
+                        <app-button-right [buttonText]="'GitHub'"></app-button-right>
+                    </a>
+                    <a href="" target="_blank" rel="noopener noreferrer">
+                        <app-button-standard [buttonText]="'Live'"></app-button-standard>
+                    </a>
+                </div>
             </div>
-            <div class="d-flex gap8" style="padding: 10px">
-                <app-button-right></app-button-right>
-                <app-button-standard></app-button-standard>
-            </div>
+            <!-- [texturePath]="'./../../../assets/projects-img/ell_polloco.png'" -->
+
         </div>
     </div>
 </section>
-
-<div class="d-flex">
-    <div class="d-flex z-index10" style="width: 100%;">
-        <div class=" box">
-            <div class="">
-                <div class="">
-                    <div class="chevron-container">
-                        <app-chevron-icon></app-chevron-icon>
-                        <span>01</span>
-                    </div>
-                    <h3>DABubble</h3>
-                </div>
-                <h4>Angular | Firebase | Material Design</h4>
-                @if (translateService.de) {
-                <span class="text-left">
-                    I've developed a Slack clone using Angular, Firebase, and Material
-                    Design. This app enables real-time chats, private messaging, and
-                    channel creation—ideal for teams in need of fast and streamlined
-                    communication.
-                </span> } @if (translateService.en) {
-                <span class="text-left">
-                    I've developed a Slack clone using Angular, Firebase, and Material
-                    Design. This app enables real-time chats, private messaging, and
-                    channel creation—ideal for teams in need of fast and streamlined
-                    communication.
-                    
-                </span> }
-            </div>
-            <div class="d-flex gap8" style="padding: 10px">
-                <a href="https://swen-breitung.de/" target="_blank" rel="noopener noreferrer">
-                    <app-button-right></app-button-right>
-                </a>
-                <a href="https://github.com/SwenBreitung/daBubble" target="_blank" rel="noopener noreferrer">
-                    <app-button-standard></app-button-standard>
-                </a>
-            </div>
-        </div>
-        <div class=" box">
-            <!-- [texturePath]="'./../../../assets/projects-img/da_bubble.png'" -->
-            <app-three-js-animation></app-three-js-animation>
-
-        </div>
-    </div>
-</div>
-
-<div class="d-flex">
-    <div class="box">Box 1</div>
-    <div class="box">Box 2</div>
-</div>
