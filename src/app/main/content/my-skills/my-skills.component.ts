@@ -15,7 +15,9 @@ export class MySkillsComponent  {
     public translateService:TranslateService,
     public layoutService:LayoutService,
   ){}
-
+  testing(){
+    console.log('test')
+  }
 
   
 }

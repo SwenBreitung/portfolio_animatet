@@ -2,16 +2,17 @@ import { AfterViewInit, Component,ElementRef  } from '@angular/core';
 import{ ChevronIconComponent } from './../../../ui-components/chevron-icon/chevron-icon.component'
 import { HoverButtonComponent } from "../../../ui-components/hover-button/hover-button.component";
 import { TranslateService } from "./../../../service/translate.service"
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-about-me',
   standalone: true,
-  imports: [ChevronIconComponent, HoverButtonComponent],
+  imports: [ChevronIconComponent, HoverButtonComponent,CommonModule],
   templateUrl: './about-me.component.html',
   styleUrl: './about-me.component.scss'
 })
 export class AboutMeComponent implements AfterViewInit{
   private japaneseChars: string[] = ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ"];
-
+  isVisible = false;
   constructor(
     private elementRef: ElementRef,   
     public translateService:TranslateService,
@@ -34,11 +35,7 @@ export class AboutMeComponent implements AfterViewInit{
   private startAnimations() {
     const animation = this.elementRef.nativeElement.querySelector('#animation');
     const heroImage = this.elementRef.nativeElement.querySelector('#hero-image');
-
-    // Start the slideIn animation
     animation.style.animation = 'slideIn 2s forwards';
-
-    // Make the image visible halfway through the slideIn animation
     setTimeout(() => {
       heroImage.style.opacity = '1';
     }, 500);
@@ -52,6 +49,11 @@ export class AboutMeComponent implements AfterViewInit{
       span.style.animationDelay = `${index * 0.5}s`;
       this.animateCharacter(span, index * 0.5);
     });
+ 
+    setTimeout(() => {
+      this.isVisible = true; // Nach 4 Sekunden auf true setzen
+    }, 4000);
+
   }
 
   private animateCharacter(span: HTMLElement, delay: number) {
@@ -68,7 +70,7 @@ export class AboutMeComponent implements AfterViewInit{
         } else {
           clearInterval(intervalId);
           let finalText = span.getAttribute('data-final-text');
-          span.textContent = finalText === ' ' ? '\u00A0' : finalText; // Leerzeichen explizit anzeigen
+          span.textContent = finalText === ' ' ? '\u00A0' : finalText; 
           span.style.opacity = "1";
         }
       }, interval);

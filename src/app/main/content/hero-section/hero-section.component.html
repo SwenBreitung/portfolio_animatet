@@ -1,6 +1,6 @@
 <app-displacement-sphere></app-displacement-sphere>
-<section>
-    <div style="width: 100%;">
+<section id="hero-section">
+    <div class="text-container" style="width: 100%;">
         <div class="animated-header">
             <span class="char" style="animation-delay: 0s;">S</span>
             <span class="char" style="animation-delay: 0.1s;">w</span>
@@ -26,5 +26,5 @@
         </div>
         <h1 class="sub-header-text">Developer</h1>
     </div>
-    <div href="" class="scroll-indicator"></div>
+    <div (click)="layoutService.scrollToSection('my-projects')" class="scroll-indicator cursor-pointer"></div>
 </section>

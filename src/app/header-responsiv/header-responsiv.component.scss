@@ -4,16 +4,37 @@ svg {
     height: 10px;
 }
 
-.header-img-container {
+.position-fixed {
     position: fixed;
-    display: flex;
-    padding: 4px;
-    justify-content: center;
-    align-items: center;
     top: 10px;
     right: 10px;
+}
+
+.header-img-container {
+    position: relative;
+    display: flex;
+    padding: 6px;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, clip-path 0.3s ease;
     &:hover {
-        background-color: #d3d3d3;
-        clip-path: polygon(0 0, 100% 0, 100% 85%, 85% 100%, 0 100%);
+        background-color: var(--secondary-color-hover);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 90% 100%, 0 100%);
+    }
+    .header-img-container {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+    .line {
+        width: 17px;
+        height: 1px;
+        background-color: var(--main-color);
+    }
+}
+
+@media(min-width:700px) {
+    .header-img-container {
+        display: none;
     }
 }

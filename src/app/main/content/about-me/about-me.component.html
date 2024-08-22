@@ -2,22 +2,22 @@
     <div class="text-container">
         <h3 class="animated-text">
             @if (translateService.de) {
-            <span data-final-text="H">H</span>
-            <span data-final-text="e">e</span>
-            <span data-final-text="y">y</span>
-            <span data-final-text=" ">&nbsp;</span>
-            <span data-final-text="D">D</span>
-            <span data-final-text="u">u</span>
-            <span data-final-text=",">,</span> } @if (translateService.en) {
-            <span data-final-text="H">H</span>
-            <span data-final-text="i">i</span>
-            <span data-final-text=" ">&nbsp;</span>
-            <span data-final-text="t">t</span>
-            <span data-final-text="h">h</span>
-            <span data-final-text="e">e</span>
-            <span data-final-text="r">r</span>
-            <span data-final-text="e">e</span>
-            <span data-final-text=",">,</span> }
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="H">H</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="e">e</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="y">y</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text=" ">&nbsp;</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="D">D</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="u">u</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text=",">,</span> } @if (translateService.en) {
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="H">H</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="i">i</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text=" ">&nbsp;</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="t">t</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="h">h</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="e">e</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="r">r</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text="e">e</span>
+            <span [ngStyle]="{ 'opacity': isVisible ? '1' : '0' }" data-final-text=",">,</span> }
         </h3>
 
         <span>

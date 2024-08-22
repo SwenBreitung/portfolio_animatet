@@ -1,4 +1,4 @@
-<section id="contact-me" class="contact">
+<section id="contact" class="contact">
     <div class="header-container">
 
         <app-chevron-icon></app-chevron-icon>
@@ -94,7 +94,7 @@
     </div>
 
 
-    <div class="background-img"><img src="./assets/brackground-img/green_shadow3.svg" alt=""></div>
+
     <div *ngIf="isLoading" class="loading-container">
         @if (translateService.de) {
         <div class="loading-bar">
@@ -113,10 +113,7 @@
             <h1>The message could not be sent.</h1> } } @if(!isError){ @if (translateService.de) {
             <h1>Die Nachricht wurde gesendet.</h1>
             } @if (translateService.en) {
-
             <h1>The message has been sent.</h1>> } }
-
-            <!-- <app-button text="Close"></app-button> -->
         </div>
     </div>
 

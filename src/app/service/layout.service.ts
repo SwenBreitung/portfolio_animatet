@@ -8,6 +8,7 @@ export class LayoutService {
 
   constructor(private router: Router) {}
   dialogGit = false;
+  isDialogOpen = false;
   navigateToMainAndScroll(sectionId: string): void {
     this.router.navigate(['/main']).then(() => {
       this.scrollToSection(sectionId);

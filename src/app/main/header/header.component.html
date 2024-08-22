@@ -1,41 +1,46 @@
 <header>
 
     <div class="top-header">
-        <span class="header-logo"><b>B</b></span>
+        <span class="header-logo" (click)="scrollTo('hero-section')"><b>B</b></span>
         <span (click)="scrollTo('about-me')" class="header-link rotated-text">About Me
             <div class="line"></div>
         </span>
-        <span class="header-link rotated-text">My Skills
-            <div (click)="scrollTo('my-skills')"class="line"></div>
-        </span>
-        <span class="header-link rotated-text">Projects
+        <span (click)="scrollTo('my-skills')" class="header-link rotated-text">My Skills
             <div class="line"></div>
         </span>
-        <span class="header-link rotated-text">Contact
+        <span (click)="scrollTo('my-projects')" class="header-link rotated-text">Projects
+            <div class="line"></div>
+        </span>
+        <span (click)="scrollTo('contact')" class="header-link rotated-text">Contact
             <div class="line"></div>
         </span>
     </div>
     <div class="translate-container">
-        <img (click)=" switchTranslateToEnglish()" class="translate-logo" src="./../../../assets/sidebar-img/english-flag.png" alt="">
-        <img (click)="switchTranslateToGerman()" class="translate-logo" src="./../../../assets/sidebar-img/german-flag.png" alt="">
+        <img (click)=" switchTranslateToEnglish()" class="translate-logo" src="./../../../assets/sidebar-img/english-flag.png" alt="english-flag">
+        <img (click)="switchTranslateToGerman()" class="translate-logo" src="./../../../assets/sidebar-img/german-flag.png" alt="german-flag">
     </div>
     <div class="bottom-header">
-        <svg class="logo" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M15 0.141602C6.7 0.141602 0 6.8416 0 15.1416C0 23.4416 6.7 30.1416 15 30.1416C23.3 30.1416 30 23.4416 30 15.1416C30 6.8416 23.3 0.141602 15 0.141602ZM24 20.7416C24 21.2416 23.6 21.6416 23.1 21.6416H7C6.4 21.6416 6 21.1416 6 20.6416V10.9416L15 15.6416L24 10.9416V20.7416ZM24 9.8416L15 14.5416L6 9.8416V9.6416C6 9.1416 6.4 8.6416 7 8.6416H23C23.6 8.6416 24 9.1416 24 9.6416V9.8416Z" fill="white"/>
-        </svg>
-        <svg class="logo" width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M58.8784 27.8573L32.6467 1.62561C31.1459 0.124796 28.6663 0.124796 27.1655 1.62561L21.7495 7.0416L28.6663 13.9584C30.2976 13.4364 32.1247 13.7626 33.3645 15.0677C34.6696 16.3728 34.9958 18.1998 34.4738 19.8312L41.1296 26.487C42.7609 25.9649 44.588 26.2912 45.8931 27.5963C47.7202 29.3581 47.7202 32.2945 45.8931 34.1215C44.066 35.9486 41.1949 35.9486 39.3678 34.1215C37.9975 32.7512 37.6712 30.7936 38.389 29.0971L32.19 22.898V39.2113C32.6467 39.407 33.0383 39.7333 33.4298 40.0595C35.2569 41.8214 35.2569 44.7578 33.4298 46.5848C31.6027 48.3467 28.7316 48.3467 26.9045 46.5848C25.0774 44.7578 25.0774 41.8866 26.9045 40.0595C27.3613 39.6028 27.8833 39.2765 28.4053 39.0808V22.5718C27.8833 22.376 27.3613 21.9845 26.9045 21.593C25.5342 20.2227 25.2079 18.2651 25.9257 16.5685L19.0741 9.78222L1.12961 27.7268C-0.371206 29.2276 -0.371206 31.7072 1.12961 33.208L27.296 59.3744C28.7968 60.8752 31.2764 60.8752 32.7772 59.3744L58.8131 33.3385C60.3792 31.7724 60.3792 29.3581 58.8784 27.8573Z" fill="white"/>
-        </svg>
-        <svg class="logo" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <g clip-path="url(#clip0_167_875)">
-            <path d="M15 0.141602C6.7 0.141602 0 6.8416 0 15.1416C0 23.4416 6.7 30.1416 15 30.1416C23.3 30.1416 30 23.4416 30 15.1416C30 6.8416 23.3 0.141602 15 0.141602ZM6.7 5.6416C7.1 5.3416 7.6 5.1416 8 5.1416C8.4 5.1416 9 5.3416 9.3 5.6416C9.6 6.0416 9.8 6.4416 9.8 6.9416C9.8 7.4416 9.6 7.9416 9.2 8.2416C9 8.6416 8.5 8.8416 8 8.8416C7.5 8.8416 7 8.6416 6.7 8.3416C6.4 7.9416 6.2 7.4416 6.2 6.9416C6.2 6.4416 6.4 6.0416 6.7 5.6416ZM9.9 21.7416H6.2V10.2416H9.9V21.7416ZM23.8 21.7416H20.1V15.6416C20.1 11.9416 15.7 12.2416 15.7 15.6416V21.7416H12.1V10.2416H15.8V11.7416C17.3 8.9416 23.9 8.7416 23.9 14.4416V21.7416H23.8Z" fill="white"/>
-            </g>
-            <defs>
-            <clipPath id="clip0_167_875">
-            <rect width="30" height="30" fill="white" transform="translate(0 0.141602)"/>
-            </clipPath>
-            </defs>
+        <a href="mailto:swenbreitung86@gmail.com">
+            <svg class="logo" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15 0.141602C6.7 0.141602 0 6.8416 0 15.1416C0 23.4416 6.7 30.1416 15 30.1416C23.3 30.1416 30 23.4416 30 15.1416C30 6.8416 23.3 0.141602 15 0.141602ZM24 20.7416C24 21.2416 23.6 21.6416 23.1 21.6416H7C6.4 21.6416 6 21.1416 6 20.6416V10.9416L15 15.6416L24 10.9416V20.7416ZM24 9.8416L15 14.5416L6 9.8416V9.6416C6 9.1416 6.4 8.6416 7 8.6416H23C23.6 8.6416 24 9.1416 24 9.6416V9.8416Z" fill="white"/>
             </svg>
-
+        </a>
+        <a href="https://github.com/SwenBreitung" target="_blank">
+            <svg class="logo" width="60" height="61" viewBox="0 0 60 61" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M58.8784 27.8573L32.6467 1.62561C31.1459 0.124796 28.6663 0.124796 27.1655 1.62561L21.7495 7.0416L28.6663 13.9584C30.2976 13.4364 32.1247 13.7626 33.3645 15.0677C34.6696 16.3728 34.9958 18.1998 34.4738 19.8312L41.1296 26.487C42.7609 25.9649 44.588 26.2912 45.8931 27.5963C47.7202 29.3581 47.7202 32.2945 45.8931 34.1215C44.066 35.9486 41.1949 35.9486 39.3678 34.1215C37.9975 32.7512 37.6712 30.7936 38.389 29.0971L32.19 22.898V39.2113C32.6467 39.407 33.0383 39.7333 33.4298 40.0595C35.2569 41.8214 35.2569 44.7578 33.4298 46.5848C31.6027 48.3467 28.7316 48.3467 26.9045 46.5848C25.0774 44.7578 25.0774 41.8866 26.9045 40.0595C27.3613 39.6028 27.8833 39.2765 28.4053 39.0808V22.5718C27.8833 22.376 27.3613 21.9845 26.9045 21.593C25.5342 20.2227 25.2079 18.2651 25.9257 16.5685L19.0741 9.78222L1.12961 27.7268C-0.371206 29.2276 -0.371206 31.7072 1.12961 33.208L27.296 59.3744C28.7968 60.8752 31.2764 60.8752 32.7772 59.3744L58.8131 33.3385C60.3792 31.7724 60.3792 29.3581 58.8784 27.8573Z" fill="white"/>
+            </svg>
+        </a>
+        <a href="https://linkedin.com/in/swen-breitung-323841296" target="_blank">
+            <svg class="logo" width="30" height="31" viewBox="0 0 30 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_167_875)">
+                <path d="M15 0.141602C6.7 0.141602 0 6.8416 0 15.1416C0 23.4416 6.7 30.1416 15 30.1416C23.3 30.1416 30 23.4416 30 15.1416C30 6.8416 23.3 0.141602 15 0.141602ZM6.7 5.6416C7.1 5.3416 7.6 5.1416 8 5.1416C8.4 5.1416 9 5.3416 9.3 5.6416C9.6 6.0416 9.8 6.4416 9.8 6.9416C9.8 7.4416 9.6 7.9416 9.2 8.2416C9 8.6416 8.5 8.8416 8 8.8416C7.5 8.8416 7 8.6416 6.7 8.3416C6.4 7.9416 6.2 7.4416 6.2 6.9416C6.2 6.4416 6.4 6.0416 6.7 5.6416ZM9.9 21.7416H6.2V10.2416H9.9V21.7416ZM23.8 21.7416H20.1V15.6416C20.1 11.9416 15.7 12.2416 15.7 15.6416V21.7416H12.1V10.2416H15.8V11.7416C17.3 8.9416 23.9 8.7416 23.9 14.4416V21.7416H23.8Z" fill="white"/>
+                </g>
+                <defs>
+                <clipPath id="clip0_167_875">
+                <rect width="30" height="30" fill="white" transform="translate(0 0.141602)"/>
+                </clipPath>
+                </defs>
+            </svg>
+        </a>
     </div>
 </header>

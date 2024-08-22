@@ -359,7 +359,9 @@ export class ThreeJsAnimationComponent implements AfterViewInit, OnDestroy {
 
   ngAfterViewInit(): void {
     this.initThreeJs();
+    setTimeout(() => {
     this.onWindowResize(); 
+  }, 0);
     window.addEventListener('resize', this.onWindowResize.bind(this), false);  // Resize-Eventlistener
     this.animate();
   }
@@ -546,25 +548,42 @@ export class ThreeJsAnimationComponent implements AfterViewInit, OnDestroy {
 
     this.renderer.render(this.scene, this.camera);
   };
-
   private onWindowResize(): void {
     const container = this.rendererContainer.nativeElement;
     const width = container.clientWidth;
     const height = container.clientHeight;
   
-    // Kamera und Renderer an die neue Größe des Containers anpassen
+    // Adjust the size of the renderer and camera aspect ratio
     this.renderer.setSize(width, height);
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();
   
-    // Basierend auf der Containergröße skalieren
-    const scale = Math.min(width / 600, height / 600); // Basierend auf einer 800x600 Referenzgröße
-    this.laptopGroup.scale.set(scale, scale, scale); // Skaliere den Laptop gleichmäßig
-    
-    // Passe die Kameraposition an, um den Laptop größer erscheinen zu lassen
-    this.camera.position.set(0, 1.5, 2 / scale); // Kamera rückt näher heran, wenn skaliert wird
-    this.camera.lookAt(0, 1, 0);  // Fokus auf den Mittelpunkt des Laptops
+    // Adjust the scaling to a more balanced value
+    const scale = Math.min(width / 400, height / 400); // Use 800x600 as a reference instead
+    this.laptopGroup.scale.set(scale, scale, scale);
+  
+    // Adjust the camera's position to make sure the laptop is well framed
+    this.camera.position.set(0, 1.5, 3 / scale); // Tweak the z-position to control the overall size
+    this.camera.lookAt(0, 1, 0);
   }
+  // private onWindowResize(): void {
+  //   const container = this.rendererContainer.nativeElement;
+  //   const width = container.clientWidth;
+  //   const height = container.clientHeight;
+  
+  //   // Kamera und Renderer an die neue Größe des Containers anpassen
+  //   this.renderer.setSize(width, height);
+  //   this.camera.aspect = width / height;
+  //   this.camera.updateProjectionMatrix();
+  
+  //   // Basierend auf der Containergröße skalieren
+  //   const scale = Math.min(width / 600, height / 600); // Basierend auf einer 800x600 Referenzgröße
+  //   this.laptopGroup.scale.set(scale, scale, scale); // Skaliere den Laptop gleichmäßig
+    
+  //   // Passe die Kameraposition an, um den Laptop größer erscheinen zu lassen
+  //   this.camera.position.set(0, 1.5, 2 / scale); // Kamera rückt näher heran, wenn skaliert wird
+  //   this.camera.lookAt(0, 1, 0);  // Fokus auf den Mittelpunkt des Laptops
+  // }
 
   @HostListener('mousemove', ['$event'])
   onMouseMoveHandler(event: MouseEvent) {

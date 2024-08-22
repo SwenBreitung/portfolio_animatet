@@ -1,6 +1,6 @@
 import { Component, OnInit,NgModule, Renderer2, ElementRef, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { LayoutService } from './../../../service/layout.service'
 import { DisplacementSphereComponent } from "./../../../animationen/displacement-sphere/displacement-sphere.component";
 @Component({
   selector: 'app-hero-section',
@@ -16,7 +16,11 @@ export class HeroSectionComponent implements OnInit{
   intervalId: any;
   isVisible: boolean = true;
 
-  constructor(private renderer: Renderer2, private el: ElementRef) {}
+  constructor(
+    private renderer: Renderer2, 
+    private el: ElementRef,
+  public layoutService:LayoutService
+) {}
   ngOnInit() {
     this.startWordRotation();
     this.checkScroll();
@@ -75,4 +79,6 @@ export class HeroSectionComponent implements OnInit{
       }, 10); // Small delay to ensure classes are added/removed correctly
     }
   }
+
+
 }

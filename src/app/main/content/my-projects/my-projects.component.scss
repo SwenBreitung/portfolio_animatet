@@ -140,6 +140,7 @@ a:hover {
 
 .skill-overlay {}
 
+.skill-container-img-left,
 .skill-container-img-right {
     position: relative;
     height: 380px;
@@ -154,6 +155,7 @@ app-three-js-animation {
 .skill-container-img-left {
     width: 100%;
     display: flex;
+    margin-bottom: 80px;
 }
 
 .header-container {
@@ -207,6 +209,11 @@ h4 {
     }
 }
 
+.button-container {
+    padding: 10px;
+    width: 100%;
+}
+
 @media(max-width:860px) {
     .container-left-text,
     .all-text-right {
@@ -222,6 +229,28 @@ h4 {
 }
 
 @media(max-width:700px) {
+    .button-container {
+        justify-content: space-around;
+    }
+    section {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    .skill-container-img-left {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        height: auto;
+    }
+    .skill-container-img-right {
+        height: auto;
+    }
+    .container-right-text {
+        width: 100%;
+    }
+    app-three-js-animation {
+        width: 100%;
+        height: 350px;
+    }
     #portfolio {
         padding-bottom: 80px;
     }
@@ -230,7 +259,7 @@ h4 {
         width: 100% !important;
     }
     .skill-container-img-right {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
     .skill-container-img-left {
         flex-direction: column;
@@ -253,9 +282,10 @@ h4 {
         width: 100%;
         align-items: center;
     }
-    .container-right-text {
-        width: calc(100% - 100px);
+    .skill-container-img-right {
+        width: 100%;
         align-items: center;
+        flex-direction: column-reverse;
     }
     .container-left-img {
         align-items: center;

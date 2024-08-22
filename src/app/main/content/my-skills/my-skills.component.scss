@@ -47,8 +47,10 @@ app-chevron-icon {
 }
 
 .left-container {
-    max-width: 700px;
+    justify-content: center;
+    align-items: center;
     gap: 8px;
+    width: 100%;
 }
 
 .background-img {
@@ -213,5 +215,12 @@ app-chevron-icon {
         span {
             width: 320px
         }
+    }
+}
+
+@media(max-width:700px) {
+    #my-skills {
+        padding-left: 5%;
+        padding-right: 5%;
     }
 }

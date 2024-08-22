@@ -9,11 +9,12 @@ import { MyToolsComponent } from "./my-tools/my-tools.component";
 import { ThreeJsAnimationComponent } from "../../animationen/three-js-animation/three-js-animation.component";
 import { HeaderResponsivComponent } from "../../header-responsiv/header-responsiv.component";
 import { FooterComponent } from "../footer/footer.component";
+import { HeaderResponsivDialogComponent } from "../../header-responsiv/header-responsiv-dialog/header-responsiv-dialog.component";
 
 @Component({
   selector: 'app-content',
   standalone: true,
-  imports: [HeroSectionComponent, DisplacementSphereComponent, MyProjectsComponent, MySkillsComponent, ContactComponent, AboutMeComponent, MyToolsComponent, ThreeJsAnimationComponent, HeaderResponsivComponent, FooterComponent],
+  imports: [HeroSectionComponent, DisplacementSphereComponent, MyProjectsComponent, MySkillsComponent, ContactComponent, AboutMeComponent, MyToolsComponent, ThreeJsAnimationComponent, HeaderResponsivComponent, FooterComponent, HeaderResponsivDialogComponent],
   templateUrl: './content.component.html',
   styleUrl: './content.component.scss'
 })

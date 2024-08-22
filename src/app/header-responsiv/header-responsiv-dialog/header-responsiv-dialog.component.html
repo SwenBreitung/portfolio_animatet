@@ -1,1 +1,21 @@
-<p>header-responsiv-dialog works!</p>
+<section *ngIf="layoutService.isDialogOpen">
+    <span (click)="scrollTo('about-me')" class="header-link">About Me
+      <div class="line"></div>
+    </span>
+    <span (click)="scrollTo('my-skills')" class="header-link">My Skills
+      <div class="line"></div>
+    </span>
+    <span (click)="scrollTo('my-projects')" class="header-link">Projects
+      <div class="line"></div>
+    </span>
+    <span (click)="scrollTo('contact')" class="header-link">Contact
+      <div class="line"></div>
+    </span>
+    <div class="translate-container">
+        <img (click)=" switchTranslateToEnglish()" class="translate-logo" src="./../../../assets/sidebar-img/english-flag.png" alt="english-flag">
+        <img (click)="switchTranslateToGerman()" class="translate-logo" src="./../../../assets/sidebar-img/german-flag.png" alt="german-flag">
+    </div>
+    <span (click)="closeMenu()" class="header-link">close
+      <div class="line"></div>
+    </span>
+</section>

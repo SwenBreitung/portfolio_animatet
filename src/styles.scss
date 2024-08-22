@@ -100,6 +100,7 @@ body {
     background-color: var(--main-background);
     width: 100vw;
     height: 100vh;
+    overflow-x: hidden;
 }
 
 app-content,
@@ -109,6 +110,13 @@ app-main,
     flex-grow: 1;
     min-height: 1px;
     min-width: 1px
+}
+
+* {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 app-content,
