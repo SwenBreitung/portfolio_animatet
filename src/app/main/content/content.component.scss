@@ -11,6 +11,16 @@ section {
     overflow-y: hidden;
 }
 
+app-hero-section,
+app-about-me,
+app-my-projects,
+app-my-skills,
+app-contact,
+app-footer {
+    padding-right: 50px;
+    padding-left: 50px;
+}
+
 app-hero-section {
     position: relative;
     width: 100%;

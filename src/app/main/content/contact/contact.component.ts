@@ -79,7 +79,11 @@ export class ContactComponent {
 
 
   navigateToPolicy() {
-    this.router.navigate(['/policy']);
+    const language = this.translateService.currentLang;
+    const url = this.router.serializeUrl(
+      this.router.createUrlTree(['/policy', { lang: language }])
+    );
+    window.open(url, '_blank');
   }
 
 

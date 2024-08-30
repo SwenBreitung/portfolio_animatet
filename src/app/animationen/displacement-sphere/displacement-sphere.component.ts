@@ -61,10 +61,11 @@ export class DisplacementSphereComponent implements OnInit, OnDestroy, AfterView
       failIfMajorPerformanceCaveat: true,
     });
     const { innerWidth, innerHeight } = window;
+
     this.renderer.setSize(innerWidth, innerHeight);
     this.renderer.setPixelRatio(window.devicePixelRatio);
 
-    this.camera = new PerspectiveCamera(75, innerWidth / innerHeight, 0.1, 1000);
+    this.camera = new PerspectiveCamera(75, innerWidth / innerHeight , 0.1, 1000);
     this.camera.position.z = 50;
 
     this.scene = new Scene();
@@ -206,8 +207,8 @@ export class DisplacementSphereComponent implements OnInit, OnDestroy, AfterView
 
   private setupScene(): void {
     const { innerWidth, innerHeight } = window;
-    this.renderer.setSize(innerWidth, innerHeight);
-    this.camera.aspect = innerWidth / innerHeight;
+    this.renderer.setSize(innerWidth, innerHeight * 1.0);
+    this.camera.aspect = innerWidth / innerHeight ;
     this.camera.updateProjectionMatrix();
   }
 
@@ -240,7 +241,7 @@ export class DisplacementSphereComponent implements OnInit, OnDestroy, AfterView
 
   private onResize = () => {
     const width = window.innerWidth;
-    const height = window.innerHeight;
+    const height = window.innerHeight * 1.0;
     this.renderer.setSize(width, height);
     this.camera.aspect = width / height;
     this.camera.updateProjectionMatrix();

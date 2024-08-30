@@ -1,10 +1,10 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { TranslateService } from '../../service/translate.service';
-
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss'
 })
@@ -17,11 +17,13 @@ constructor(
   switchTranslateToEnglish(){
     this.translateService.de= false;
     this.translateService.en= true;
+    this.translateService.currentLang = 'en';
   }
   
   switchTranslateToGerman(){
-    this.translateService.de= true;
-    this.translateService.en= false;
+    this.translateService.de = true;
+    this.translateService.en = false;
+    this.translateService.currentLang = 'de';
   }
 
   

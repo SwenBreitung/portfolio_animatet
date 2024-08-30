@@ -66,7 +66,7 @@ section {
     height: 100%;
     background-color: var(--secondary-color);
     z-index: 5;
-    animation: slideInBackground 2.0s forwards, slideOutBackground 2.0s forwards 1.3s;
+    animation: slideInBackground 2.0s forwards, slideOutBackground 2.0s forwards 3.1s;
 }
 
 .sub-header-text {
@@ -76,11 +76,11 @@ section {
 @keyframes slideOutBackground {
     0% {
         width: 100%;
-        left: 0;
+        // left: 0;
     }
     100% {
         width: 0;
-        left: 100%;
+        // left: 100%;
     }
 }
 

@@ -4,7 +4,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class TranslateService {
-  
+
+  currentLang:string = 'de'
+
   de:boolean= true;
   en:boolean= false;
 

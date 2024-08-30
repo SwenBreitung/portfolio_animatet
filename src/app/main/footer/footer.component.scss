@@ -21,7 +21,6 @@ section {
 a {
     position: relative;
     color: var(--secondary-color);
-    /* Sehr dunkles Türkis als ursprüngliche Textfarbe */
     text-decoration: none;
     background: linear-gradient(to right, white 50%, var(--secondary-color) 50%);
     -webkit-background-clip: text;
@@ -31,6 +30,7 @@ a {
     background-size: 200%;
     background-position: 0 100%;
     opacity: 0.6;
+    cursor: pointer;
 }
 
 a::after {

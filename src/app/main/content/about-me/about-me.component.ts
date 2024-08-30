@@ -44,7 +44,7 @@ export class AboutMeComponent implements AfterViewInit{
       animation.style.display = 'none';
     });
 
-    const spans = this.elementRef.nativeElement.querySelectorAll('.animated-text span');
+    const spans = this.elementRef.nativeElement.querySelectorAll('.animated-text h2');
     spans.forEach((span: HTMLElement, index: number) => {
       span.style.animationDelay = `${index * 0.5}s`;
       this.animateCharacter(span, index * 0.5);

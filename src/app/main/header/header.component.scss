@@ -124,11 +124,9 @@ header {
 }
 
 .header-link {
-    width: 60px;
     position: relative;
     display: inline-block;
     white-space: nowrap;
-    // padding: 10px 20px;
     margin: 0 10px;
     text-transform: uppercase;
     font-size: 14px;
@@ -138,7 +136,7 @@ header {
 .header-link .line {
     position: absolute;
     left: 0;
-    bottom: 8px;
+    bottom: 10px;
     height: 2px;
     width: 0;
     background-color: var(--secondary-color);
@@ -168,7 +166,6 @@ header {
     display: inline-block;
     overflow: hidden;
     color: var(--main-color);
-    /* Original text color */
 }
 
 .header-logo::after {

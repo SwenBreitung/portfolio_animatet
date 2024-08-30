@@ -16,8 +16,8 @@
         </span>
     </div>
     <div class="translate-container">
-        <img (click)=" switchTranslateToEnglish()" class="translate-logo" src="./../../../assets/sidebar-img/english-flag.png" alt="english-flag">
-        <img (click)="switchTranslateToGerman()" class="translate-logo" src="./../../../assets/sidebar-img/german-flag.png" alt="german-flag">
+        <img [ngStyle]="{'opacity': translateService.en ? '1' : '0.5'}" (click)=" switchTranslateToEnglish()" class="translate-logo" src="./../../../assets/sidebar-img/english-flag.png" alt="english-flag">
+        <img [ngStyle]="{'opacity': translateService.de ? '1' : '0.5'}" (click)="switchTranslateToGerman()" class="translate-logo" src="./../../../assets/sidebar-img/german-flag.png" alt="german-flag">
     </div>
     <div class="bottom-header">
         <a href="mailto:swenbreitung86@gmail.com">
